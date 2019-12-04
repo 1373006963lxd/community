@@ -41,7 +41,7 @@ http://localhost:8887
 
 ## 工具
 >> [Git](https://git-scm.com/download)   
-[Visual Paradigm](https://www.visual-paradigm.com)    
+[Visual Paradigm时序图](https://www.visual-paradigm.com)    
 [Flyway](https://flywaydb.org/getstarted/firststeps/maven)  
 [Maven](https://mvnrepository.com/)
 [Lombok](https://www.projectlombok.org)    
@@ -50,6 +50,7 @@ http://localhost:8887
 [One Tab](https://chrome.google.com/webstore/detail/chphlpgkkbolifaimnlloiipkdnihall)    
 [Live Reload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei/related)  
 [Postman](https://chrome.google.com/webstore/detail/coohjcphdfgbiolnekdpbcijmhambjff)
+[Okhttp](https://square.github.io/okhttp/)
 ### 前端资源下载
 - 用于生产环境的 Bootstrap
 ## 脚本
@@ -78,11 +79,17 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 ## 知识整理
 - 2019-12-4 http:localhost:8887/hello?name=lxd [协议+域名+端口号（默认80可省略）+路径+?+参数]
 - 带注解的文件只要和启动类在同一级或者在下一级都能够识别自动加载进来
+- 授权登录
 ## 快捷键
 - ctrl+p 参数显示
 - ctrl+shift+R 进入某个文件
 - ctrl+shift+F12 将编辑页面最大化
 - alt+shift+R 更改文件名
+- alt+insert 插入set get方法
+- ctrl+alt+v 将参数中的对象从外面new
+- shift + enter 将光标移动到下一行的开始
+- ctrl + shift + n 打开一个匿名窗口（清空缓存）
+- ctrl + e 快速切换窗口
 ### Git
 - git init
 - git add README.md
