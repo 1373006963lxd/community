@@ -23,9 +23,9 @@ http://localhost:8887
 
 
 ## 资料
-[对照elasticsearch网站开发](https://elasticsearch.cn/explore/)
-[Spring 文档](https://spring.io/guides)    
-[Spring Web](https://spring.io/guides/gs/serving-web-content/)   
+>> [对照elasticsearch网站开发](https://elasticsearch.cn/explore/)
+>> [Spring 文档](https://spring.io/guides)    
+>> [Spring Web](https://spring.io/guides/gs/serving-web-content/)   
 [es](https://elasticsearch.cn/explore)    
 [Github deploy key](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys)    
 [Bootstrap](https://v3.bootcss.com/getting-started/)    
@@ -40,7 +40,7 @@ http://localhost:8887
 [Count(*) VS Count(1)](https://mp.weixin.qq.com/s/Rwpke4BHu7Fz7KOpE2d3Lw)  
 
 ## 工具
-[Git](https://git-scm.com/download)   
+>> [Git](https://git-scm.com/download)   
 [Visual Paradigm](https://www.visual-paradigm.com)    
 [Flyway](https://flywaydb.org/getstarted/firststeps/maven)  
 [Maven](https://mvnrepository.com/)
@@ -50,7 +50,8 @@ http://localhost:8887
 [One Tab](https://chrome.google.com/webstore/detail/chphlpgkkbolifaimnlloiipkdnihall)    
 [Live Reload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei/related)  
 [Postman](https://chrome.google.com/webstore/detail/coohjcphdfgbiolnekdpbcijmhambjff)
-
+### 前端资源下载
+- 用于生产环境的 Bootstrap
 ## 脚本
 ```sql
 CREATE TABLE USER
@@ -80,6 +81,8 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 ## 快捷键
 - ctrl+p 参数显示
 - ctrl+shift+R 进入某个文件
+- ctrl+shift+F12 将编辑页面最大化
+- alt+shift+R 更改文件名
 ### Git
 - git init
 - git add README.md
