@@ -31,7 +31,8 @@ http://localhost:8887
 [Bootstrap](https://v3.bootcss.com/getting-started/)    
 [Github OAuth](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/)    
 [Spring](https://docs.spring.io/spring-boot/docs/2.0.0.RC1/reference/htmlsingle/#boot-features-embedded-database-support)    
-[菜鸟教程](https://www.runoob.com/mysql/mysql-insert-query.html)    
+[Mysql菜鸟教程](https://www.runoob.com/mysql/mysql-insert-query.html)    
+[H2数据库](http://www.h2database.com/html/main.html)
 [Thymeleaf](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#setting-attribute-values)    
 [Spring Dev Tool](https://docs.spring.io/spring-boot/docs/2.0.0.RC1/reference/htmlsingle/#using-boot-devtools)  
 [Spring MVC](https://docs.spring.io/spring/docs/5.0.3.RELEASE/spring-framework-reference/web.html#mvc-handlermapping-interceptor)  
@@ -55,15 +56,15 @@ http://localhost:8887
 - 用于生产环境的 Bootstrap
 ## 脚本
 ```sql
-CREATE TABLE USER
-(
-    ID int AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    ACCOUNT_ID VARCHAR(100),
-    NAME VARCHAR(50),
-    TOKEN VARCHAR(36),
-    GMT_CREATE BIGINT,
-    GMT_MODIFIED BIGINT
-);
+CREATE TABLE `user` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `account_id` varchar(100) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `token` char(36) DEFAULT NULL,
+  `gmt_create` bigint(20) DEFAULT NULL,
+  `gmt_modified` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 ```
 ```bash
 mvn flyway:migrate
@@ -80,6 +81,7 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - 2019-12-4 http:localhost:8887/hello?name=lxd [协议+域名+端口号（默认80可省略）+路径+?+参数]
 - 带注解的文件只要和启动类在同一级或者在下一级都能够识别自动加载进来
 - 授权登录
+>> github->setting->Developer setting->community
 ## 快捷键
 - ctrl+p 参数显示
 - ctrl+shift+R 进入某个文件
@@ -90,6 +92,7 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - shift + enter 将光标移动到下一行的开始
 - ctrl + shift + n 打开一个匿名窗口（清空缓存）
 - ctrl + e 快速切换窗口
+- shift + F6 快速修改变量名
 ### Git
 - git init
 - git add README.md
