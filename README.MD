@@ -43,7 +43,7 @@ http://localhost:8887
 ## 工具
 >> [Git](https://git-scm.com/download)   
 [Visual Paradigm时序图](https://www.visual-paradigm.com)    
-[Flyway](https://flywaydb.org/getstarted/firststeps/maven)  
+[Flyway 执行数据库脚本](https://flywaydb.org/getstarted/firststeps/maven)  
 [Maven](https://mvnrepository.com/)
 [Lombok](https://www.projectlombok.org)    
 [ctotree](https://www.octotree.io/)   
@@ -63,9 +63,11 @@ CREATE TABLE `user` (
   `token` char(36) DEFAULT NULL,
   `gmt_create` bigint(20) DEFAULT NULL,
   `gmt_modified` bigint(20) DEFAULT NULL,
+  `bio` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 ```
+
 ```bash
 mvn flyway:migrate
 mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
@@ -99,3 +101,17 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - git commit -m "first commit"
 - git remote add origin git@github.com:1373006963lxd/community.git  可以将项目添加到已经创建的厂库里面
 - git push -u origin master
+### Git注意事项
+- 当团队协作的时候，在git push 的时候，一定要先git pull一下-拉取最新的代码
+- git log 打印日志
+- git show 展示做的什么操作
+- git reset 提交记录码  当在git push之前又修改了东西，可以用这个命令
+- git status 可以查看每一步操作后的状态
+- git branch branch1(分支名)  创建分支
+- git checkout branch1   切换到指定分支
+### 在idea中解决冲突
+- 项目->右键->git->Resove->双击冲突文件->解决冲突()
+- 两边分别是你和新的代码，中间是合并后的代码，根据你和冲突部分的选择，最后解决中间文件问题
+- idea方便的原因是：冲突部分分别有左右箭头，根据需要可加入可不加入来解决冲突
+### 前端样式
+- 样式调整在后面追加即可

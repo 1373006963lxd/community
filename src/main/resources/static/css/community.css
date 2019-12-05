@@ -1,7 +1,8 @@
+/*body的颜色为灰色*/
 body {
-    background-color: #efefef;
+    background-color: #eaeaea;
 }
-
+/*这里面的背景颜色为白色*/
 .main {
     background-color: white;
     margin: 30px;
