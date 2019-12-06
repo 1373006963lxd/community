@@ -11,4 +11,5 @@ public class User {
     //数据库中是bigint类型
     private Long gmtCreate;
     private Long gmtModified;
+    private String avatarUrl;
 }

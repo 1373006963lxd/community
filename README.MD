@@ -130,3 +130,6 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - idea方便的原因是：冲突部分分别有左右箭头，根据需要可加入可不加入来解决冲突
 ### 前端样式
 - 样式调整在后面追加即可
+### Mysql语句
+- alter table user drop column bio
+- alter table user modify column avatar_url varchar(256);
