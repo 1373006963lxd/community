@@ -9,6 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * Created by codedrinker on 2019/5/16.
  */
 @Configuration
+//这个注解需要自己配置静态资源的位置，不走默认的路径，如果不用这个注解，会自动解析static下的静态资源
 //@EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
 

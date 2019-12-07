@@ -131,6 +131,9 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - git status 可以查看每一步操作后的状态
 - git branch branch1(分支名)  创建分支
 - git checkout branch1   切换到指定分支
+- git托管，当代码改错地方时候，可以文件-右键-git-revert即可回去
+- 项目-右键-git-showhistory-查看提交历史-双击即可查看对比修改的页面(类同SVN)
+- 项目-右键-localhistory-查看历史记录
 ### 在idea中解决冲突
 - 项目->右键->git->Resove->双击冲突文件->解决冲突()
 - 两边分别是你和新的代码，中间是合并后的代码，根据你和冲突部分的选择，最后解决中间文件问题

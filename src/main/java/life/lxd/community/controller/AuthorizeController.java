@@ -1,10 +1,12 @@
 package life.lxd.community.controller;
 
+import com.sun.deploy.net.HttpResponse;
 import life.lxd.community.dto.AccessTokenDTO;
 import life.lxd.community.dto.GithubUser;
 import life.lxd.community.mapper.UserMapper;
 import life.lxd.community.model.User;
 import life.lxd.community.provider.GithubProvider;
+import life.lxd.community.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -23,7 +25,7 @@ public class AuthorizeController {
     private GithubProvider githubProvider;
 
     @Autowired
-    private UserMapper userMapper;
+    private UserService userService;
     //读取配置文件中的值赋值给参数
     @Value("${github.client.id}")
     private String clientId;
@@ -56,11 +58,11 @@ public class AuthorizeController {
             String token = UUID.randomUUID().toString();
             user.setToken(token);
             user.setAccountId(String.valueOf(githubUser.getId()));
-            user.setGmtCreate(System.currentTimeMillis());
-            user.setGmtModified(user.getGmtCreate());
+
             user.setAvatarUrl(githubUser.getAvatarUrl());
+
             //插入数据库的过程就相当于写入了session
-            userMapper.insert(user);
+            userService.createOrUpdate(user);
             response.addCookie(new Cookie("token", token));
 //            request.getSession().setAttribute("user",githubUser);
             return "redirect:/";
@@ -70,5 +72,14 @@ public class AuthorizeController {
         }
 //        System.out.println(user.getName());
 //        return "index";
+    }
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request,
+                         HttpServletResponse response){
+        request.getSession().removeAttribute("user");
+        Cookie cookie = new Cookie("token",null);
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+        return "redirect:/";
     }
 }
