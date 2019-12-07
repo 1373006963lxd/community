@@ -23,16 +23,26 @@ public class QuestionService {
 
 
         PaginationDTO paginationDTO = new PaginationDTO();
+        //总页数
+        Integer totalPage;
+
         //查出问题的总条数
         Integer totalCount = questionMapper.count();
-        //进行paginationDTO的封装操作
-        paginationDTO.setPagination(totalCount, page,size);
+        //计算总页数
+        if(totalCount%size==0){
+            totalPage = totalCount/size;
+        }else{
+            totalPage = totalCount/size+1;
+        }
+
         if(page<1){
             page=1;
         }
-        if(page>paginationDTO.getTotalPage()){
-            page = paginationDTO.getTotalPage();
+        if(page>totalPage){
+            page = totalPage;
         }
+        //进行paginationDTO的封装操作
+        paginationDTO.setPagination(totalPage, page);
         //size*(page-1)
         Integer offset = size*(page-1);
         //分页操作-当前页展示的问题数据
@@ -51,22 +61,33 @@ public class QuestionService {
         return paginationDTO;
     }
 
-    public PaginationDTO list(Integer accountId, Integer page, Integer size) {
+    public PaginationDTO list(Integer userId, Integer page, Integer size) {
+
         PaginationDTO paginationDTO = new PaginationDTO();
+        //总页数
+        Integer totalPage;
+
         //查出问题的总条数
-        Integer totalCount = questionMapper.countByUserId(accountId);
-        //进行paginationDTO的封装操作
-        paginationDTO.setPagination(totalCount, page,size);
+        Integer totalCount = questionMapper.countByUserId(userId);
+        //计算总页数
+        if(totalCount%size==0){
+            totalPage = totalCount/size;
+        }else{
+            totalPage = totalCount/size+1;
+        }
+
         if(page<1){
             page=1;
         }
-        if(page>paginationDTO.getTotalPage()){
-            page = paginationDTO.getTotalPage();
+        if(page>totalPage){
+            page = totalPage;
         }
+        //进行paginationDTO的封装操作
+        paginationDTO.setPagination(totalPage, page);
         //size*(page-1)
         Integer offset = size*(page-1);
         //分页操作-当前页展示的问题数据
-        List<Question> questionList = questionMapper.listByUserId(accountId,offset,size);
+        List<Question> questionList = questionMapper.listByUserId(userId,offset,size);
         List<QuestionDTO> questionDTOList = new ArrayList<>();
         //对QuestionDTO赋值
         for (Question question:questionList) {

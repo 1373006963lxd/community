@@ -115,6 +115,8 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - ctrl + e 快速切换窗口
 - shift + F6 快速修改变量名
 - shift 长按  复制两个光标之间的内容
+- ctrl 长按 点击某个方法名--查看引用方法的地方
+- ctrl + alt + o 删除多于的依赖
 ### Git
 - git init
 - git add README.md

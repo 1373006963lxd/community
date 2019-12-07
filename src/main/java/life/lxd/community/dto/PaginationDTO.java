@@ -28,13 +28,9 @@ public class PaginationDTO<T> {
     //总页数
     private Integer totalPage;
 
-    public void setPagination(Integer totalCount, Integer page,Integer size) {
-        //计算总页数
-        if(totalCount%size==0){
-            totalPage = totalCount/size;
-        }else{
-            totalPage = totalCount/size+1;
-        }
+    public void setPagination(Integer totalPage, Integer page) {
+        this.totalPage=totalPage;
+        this.page = page;
         //边界值处理
         if(page<1){
             page=1;
@@ -42,7 +38,7 @@ public class PaginationDTO<T> {
         if(page>totalPage){
             page=totalPage;
         }
-        this.page = page;
+
 
         //存放前端页面需要展示的页码
         pages.add(page);
