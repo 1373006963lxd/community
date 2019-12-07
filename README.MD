@@ -54,6 +54,8 @@ http://localhost:8887
 [Okhttp](https://square.github.io/okhttp/)
 ### 前端资源下载
 - 用于生产环境的 Bootstrap
+- 下载没有解压的[jquery](https://jquery.com)
+- [js-css](https://v3.bootcss.com)
 ## 脚本
 ```sql
 CREATE TABLE `user` (
@@ -98,6 +100,8 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - 2019-12-4 http:localhost:8887/hello?name=lxd [协议+域名+端口号（默认80可省略）+路径+?+参数]
 - 带注解的文件只要和启动类在同一级或者在下一级都能够识别自动加载进来
 - 授权登录
+- 引入jquery($)后，在前端控制台输入$回车返回一个方法--则成功
+- 引入jquery之后可以方便查找某一个id标签$(".id")
 >> github->setting->Developer setting->community
 ## 快捷键
 - ctrl+p 参数显示
@@ -110,6 +114,7 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - ctrl + shift + n 打开一个匿名窗口（清空缓存）
 - ctrl + e 快速切换窗口
 - shift + F6 快速修改变量名
+- shift 长按  复制两个光标之间的内容
 ### Git
 - git init
 - git add README.md
