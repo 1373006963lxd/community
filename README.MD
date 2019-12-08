@@ -91,8 +91,8 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 另一种方式 run-edit Configuration-maven-添加以上命令-apply-run这个配置
 ```
 ### MVN参考资料
-[Intellij IDEA添加一个“Run运行”选项，使用maven运行mybatis-generator-maven-plugin插件 ](https://www.cnblogs.com/liaojie970/p/7058543.html)
-[MyBatisGenerator配置](https://blog.csdn.net/one_dayR/article/details/85098387)
+>> [Intellij IDEA添加一个“Run运行”选项，使用maven运行mybatis-generator-maven-plugin插件 ](https://www.cnblogs.com/liaojie970/p/7058543.html)
+>> [MyBatisGenerator配置](https://blog.csdn.net/one_dayR/article/details/85098387)
 ## 更新日志
 - 2019-7-30 修复 session 过期时间很短问题   
 - 2019-8-2 修复因为*和+号产生的搜索异常问题  
