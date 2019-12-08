@@ -1,9 +1,7 @@
 package life.lxd.community.controller;
 
-import com.sun.deploy.net.HttpResponse;
 import life.lxd.community.dto.AccessTokenDTO;
 import life.lxd.community.dto.GithubUser;
-import life.lxd.community.mapper.UserMapper;
 import life.lxd.community.model.User;
 import life.lxd.community.provider.GithubProvider;
 import life.lxd.community.service.UserService;

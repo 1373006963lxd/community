@@ -1,8 +1,6 @@
 package life.lxd.community.controller;
 
 import life.lxd.community.dto.QuestionDTO;
-import life.lxd.community.mapper.QuestionMapper;
-import life.lxd.community.model.Question;
 import life.lxd.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

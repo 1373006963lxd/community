@@ -115,6 +115,18 @@
                     <addResources>true</addResources>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <dependencies>
+                <dependency>
+                    <groupId>mysql</groupId>
+                    <artifactId>mysql-connector-java</artifactId>
+                    <version>5.1.45</version>
+                </dependency>
+                </dependencies>
+            </plugin>
         </plugins>
     </build>
 
