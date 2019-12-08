@@ -99,7 +99,7 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 ## 知识整理
 - 2019-12-4 http:localhost:8887/hello?name=lxd [协议+域名+端口号（默认80可省略）+路径+?+参数]
 - 带注解的文件只要和启动类在同一级或者在下一级都能够识别自动加载进来
-- 授权登录
+- 授权登录setting->Personal access token->生成token 通过https://api.github.com/user?access_token=xxxxxxxxxxxx查看个人信息
 - 引入jquery($)后，在前端控制台输入$回车返回一个方法--则成功
 - 引入jquery之后可以方便查找某一个id标签$(".id")
 >> github->setting->Developer setting->community
