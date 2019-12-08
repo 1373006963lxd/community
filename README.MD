@@ -39,7 +39,7 @@ http://localhost:8887
 [Markdown 插件](http://editor.md.ipandao.com/)   
 [UFfile SDK](https://github.com/ucloud/ufile-sdk-java)  
 [Count(*) VS Count(1)](https://mp.weixin.qq.com/s/Rwpke4BHu7Fz7KOpE2d3Lw)  
-
+[MybatisGenetate](http://mybatis.org/generator/)
 ## 工具
 >> [Git](https://git-scm.com/download)   
 [Visual Paradigm时序图](https://www.visual-paradigm.com)    
@@ -102,6 +102,7 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - 授权登录setting->Personal access token->生成token 通过https://api.github.com/user?access_token=xxxxxxxxxxxx查看个人信息
 - 引入jquery($)后，在前端控制台输入$回车返回一个方法--则成功
 - 引入jquery之后可以方便查找某一个id标签$(".id")
+- mybatisGenerate解决数据库中添加字段所引起的联动性的修改(model，Mapper映射)
 >> github->setting->Developer setting->community
 ## 快捷键
 - ctrl+p 参数显示
