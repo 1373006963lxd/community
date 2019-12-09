@@ -2,6 +2,8 @@ package life.lxd.community.service;
 
 import life.lxd.community.dto.PaginationDTO;
 import life.lxd.community.dto.QuestionDTO;
+import life.lxd.community.exception.CustomizeErrorCode;
+import life.lxd.community.exception.CustomizeException;
 import life.lxd.community.mapper.QuestionMapper;
 import life.lxd.community.mapper.UserMapper;
 import life.lxd.community.model.Question;
@@ -110,8 +112,12 @@ public class QuestionService {
     }
 
     public QuestionDTO getById(Integer id) {
-        QuestionDTO questionDTO = new QuestionDTO();
         Question question = questionMapper.selectByPrimaryKey(id);
+        if(question==null){
+            throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+        }
+        QuestionDTO questionDTO = new QuestionDTO();
+
         BeanUtils.copyProperties(question, questionDTO);
         User user = userMapper.selectByPrimaryKey(question.getCreator());
         questionDTO.setUser(user);
@@ -133,7 +139,10 @@ public class QuestionService {
             updateQuestion.setTag(question.getTag());
             QuestionExample questionExample = new QuestionExample();
             questionExample.createCriteria().andIdEqualTo(question.getId());
-            questionMapper.updateByExampleSelective(updateQuestion,questionExample);
+            int updated = questionMapper.updateByExampleSelective(updateQuestion, questionExample);
+            if(updated!=1){
+                throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+            }
         }
     }
 }
