@@ -118,6 +118,7 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - 引入jquery($)后，在前端控制台输入$回车返回一个方法--则成功
 - 引入jquery之后可以方便查找某一个id标签$(".id")
 - mybatisGenerate解决数据库中添加字段所引起的联动性的修改(model，Mapper映射)
+- Mysql中字段类型为text的值, java使用selectByExample查询为null(检索的字段中包含大字段类型时，必须用selectByExampleWithBLOBs，不检索大字段时，用selectByExample就足够了。update同样如此)
 >> github->setting->Developer setting->community
 ## 快捷键
 - ctrl+p 参数显示
