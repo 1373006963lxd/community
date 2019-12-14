@@ -84,7 +84,19 @@ CREATE TABLE `question` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
-
+```sql
+CREATE TABLE `comment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(11) NOT NULL,
+  `type` int(11) NOT NULL,
+  `commentator` int(11) NOT NULL,
+  `gmt_creator` bigint(20) NOT NULL,
+  `gmt_modified` bigint(20) NOT NULL,
+  `like_count` bigint(20) unsigned zerofill NOT NULL,
+  `cotent` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
 ```bash
 mvn flyway:migrate
 mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
@@ -121,6 +133,8 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - shift 长按  复制两个光标之间的内容
 - ctrl 长按 点击某个方法名--查看引用方法的地方
 - ctrl + alt + o 删除多于的依赖
+- 右键-FindUseages 找到引用该方法的地方
+- ctrl+alt+L 格式化
 ### Git
 - git init
 - git add README.md

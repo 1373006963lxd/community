@@ -77,7 +77,8 @@ body {
 .jumbotron {
     margin: 50px;
 }
-
+/*如果是两个数字--第一个数字代表上下，第二个代表左右*/
+/*如果是四个数字--上右下左*/
 .comment {
     margin: 10px 0;
 }

@@ -62,7 +62,6 @@ public class AuthorizeController {
             //插入数据库的过程就相当于写入了session
             userService.createOrUpdate(user);
             response.addCookie(new Cookie("token", token));
-//            request.getSession().setAttribute("user",githubUser);
             return "redirect:/";
         }else{
             //登录失败

@@ -7,7 +7,9 @@
  */
 function post() {
     var questionId = $("#question_id").val();
+    // console.log(questionId); 测试打印数据
     var content = $("#comment_content").val();
+    // console.log(content)
     comment2target(questionId, 1, content);
 }
 
@@ -16,14 +18,14 @@ function comment2target(targetId, type, content) {
         alert("不能回复空内容~~~");
         return;
     }
-
+    //jquery异步加载提交数据到服务端
     $.ajax({
         type: "POST",
         url: "/comment",
         contentType: 'application/json',
         data: JSON.stringify({
             "parentId": targetId,
-            "content": content,
+            "cotent": content,
             "type": type
         }),
         success: function (response) {
