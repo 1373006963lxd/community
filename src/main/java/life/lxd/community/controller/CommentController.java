@@ -1,7 +1,9 @@
 package life.lxd.community.controller;
 
 import life.lxd.community.dto.CommentCreateDTO;
+import life.lxd.community.dto.CommentDTO;
 import life.lxd.community.dto.ResultDTO;
+import life.lxd.community.enums.CommentTypeEnum;
 import life.lxd.community.exception.CustomizeErrorCode;
 import life.lxd.community.mapper.CommentMapper;
 import life.lxd.community.model.Comment;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 public class CommentController {
@@ -39,7 +42,15 @@ public class CommentController {
         comment.setGmtModified(System.currentTimeMillis());
         comment.setGmtCreator(System.currentTimeMillis());
         comment.setCommentator(user.getId());
+        comment.setCommentCount(0);
         commentService.insert(comment);
         return ResultDTO.okOf();
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/comment/{id}", method = RequestMethod.GET)
+    public ResultDTO<List<CommentDTO>> comments(@PathVariable(name = "id") Integer id) {
+        List<CommentDTO> commentDTOS = commentService.listByTargetId(id, CommentTypeEnum.COMMENT);
+        return ResultDTO.okOf(commentDTOS);
     }
 }

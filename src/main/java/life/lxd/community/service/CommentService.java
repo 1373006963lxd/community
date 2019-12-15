@@ -5,10 +5,7 @@ import life.lxd.community.dto.CommentDTO;
 import life.lxd.community.enums.CommentTypeEnum;
 import life.lxd.community.exception.CustomizeErrorCode;
 import life.lxd.community.exception.CustomizeException;
-import life.lxd.community.mapper.CommentMapper;
-import life.lxd.community.mapper.QuestionExtMapper;
-import life.lxd.community.mapper.QuestionMapper;
-import life.lxd.community.mapper.UserMapper;
+import life.lxd.community.mapper.*;
 import life.lxd.community.model.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +36,9 @@ public class CommentService {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private CommentExtMapper commentExtMapper;
+
     //要么全部完成要么全部失败
     @Transactional
     public void insert(Comment comment) {
@@ -55,6 +55,11 @@ public class CommentService {
                 throw new CustomizeException(CustomizeErrorCode.COMMENT_NOT_FOUND);
             }
             commentMapper.insert(comment);
+
+            Comment parentComment = new Comment();
+            parentComment.setId(comment.getParentId());
+            parentComment.setCommentCount(1);
+            commentExtMapper.incCommentCount(parentComment);
         }
         else{
             // 回复问题
@@ -62,18 +67,18 @@ public class CommentService {
             if (question == null) {
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
-
+            comment.setCommentCount(0);
             commentMapper.insert(comment);
             question.setCommentCount(1);
             questionExtMapper.incCommentCount(question);
         }
     }
 
-    public List<CommentDTO> listByQuestionId(Integer id) {
+    public List<CommentDTO> listByTargetId(Integer id,CommentTypeEnum type) {
         CommentExample commentExample = new CommentExample();
         commentExample.createCriteria()
                 .andParentIdEqualTo(id)
-                .andTypeEqualTo(CommentTypeEnum.QUESTION.getType());
+                .andTypeEqualTo(type.getType());
         commentExample.setOrderByClause("gmt_creator desc");
 //        检索的字段中包含大字段类型(text)时，必须用selectByExampleWithBLOBs，不检索大字段时，用selectByExample就足够了。update同样如此。
         List<Comment> comments = commentMapper.selectByExampleWithBLOBs(commentExample);

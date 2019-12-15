@@ -14,7 +14,7 @@ mvn package
 ```
 5. 运行项目  
 ```sh
-java -jar target/community-0.0.1-SNAPSHOT.jar
+java -jar 
 ```
 6. 访问项目
 ```
@@ -105,6 +105,7 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 ### MVN参考资料
 >> [Intellij IDEA添加一个“Run运行”选项，使用maven运行mybatis-generator-maven-plugin插件 ](https://www.cnblogs.com/liaojie970/p/7058543.html)<br/>
 >> [MyBatisGenerator配置](https://blog.csdn.net/one_dayR/article/details/85098387)
+>> [moment](http://momentjs.cn/)
 ## 更新日志
 - 2019-7-30 修复 session 过期时间很短问题   
 - 2019-8-2 修复因为*和+号产生的搜索异常问题  
@@ -136,6 +137,10 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - ctrl + alt + o 删除多于的依赖
 - 右键-FindUseages 找到引用该方法的地方
 - ctrl+alt+L 格式化
+- ctrl+z ctrl + y 回撤，对立 
+- ctrl+alt+ p 抽参数
+- ctrl+ alt + v 抽变量
+- ctrl+shift+t 浏览器页面回撤
 ### Git
 - git init
 - git add README.md
