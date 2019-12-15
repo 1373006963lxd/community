@@ -73,7 +73,12 @@ body {
     font-size: 13px;
     margin-bottom: 15px;
 }
-
+.comment-bootom{
+    margin-top: 40px;
+}
+.comment-edit{
+    margin-left: 15px;
+}
 .jumbotron {
     margin: 50px;
 }

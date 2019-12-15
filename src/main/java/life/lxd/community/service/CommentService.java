@@ -74,7 +74,7 @@ public class CommentService {
         commentExample.createCriteria()
                 .andParentIdEqualTo(id)
                 .andTypeEqualTo(CommentTypeEnum.QUESTION.getType());
-//        commentExample.setOrderByClause("gmt_create desc");
+        commentExample.setOrderByClause("gmt_creator desc");
 //        检索的字段中包含大字段类型(text)时，必须用selectByExampleWithBLOBs，不检索大字段时，用selectByExample就足够了。update同样如此。
         List<Comment> comments = commentMapper.selectByExampleWithBLOBs(commentExample);
 
