@@ -56,7 +56,9 @@ public class QuestionService {
         //size*(page-1)
         Integer offset = size*(page-1);
         //分页操作-当前页展示的问题数据
-        List<Question> questionList = questionMapper.selectByExampleWithBLOBsWithRowbounds(new QuestionExample(), new RowBounds(offset, size));
+        QuestionExample questionExample = new QuestionExample();
+        questionExample.setOrderByClause("gmt_create desc");
+        List<Question> questionList = questionMapper.selectByExampleWithBLOBsWithRowbounds(questionExample, new RowBounds(offset, size));
         List<QuestionDTO> questionDTOList = new ArrayList<>();
         //对QuestionDTO赋值
         for (Question question:questionList) {

@@ -24,7 +24,7 @@ public class IndexController {
     @GetMapping("/")
     public String index(Model model,
                         @RequestParam(name="page",defaultValue = "1") Integer page,
-                        @RequestParam(name="size",defaultValue = "2") Integer size){
+                        @RequestParam(name="size",defaultValue = "5") Integer size){
 
         //实现首页展示发表问题列表，主要问题出现头像，需要和question关联，
         //因为question里面没有头像，需要与用户表关联，但是数据库中都是字段，没有引入对象

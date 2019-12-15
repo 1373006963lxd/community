@@ -30,4 +30,17 @@
     Comment_Count =Comment_Count + #{commentCount,jdbcType=INTEGER}
     where id = #{id}
   </update>
+
+  <select id="selectRelated" parameterType="life.lxd.community.model.Question" resultMap="BaseResultMap">
+    select * from QUESTION
+    <where>
+      <if test="id != null">
+        and id != #{id}
+      </if>
+      <if test="tag != null and tag != ''">
+        and tag regexp #{tag}
+      </if>
+    </where>
+    order by gmt_create desc limit 20
+  </select>
 </mapper>
