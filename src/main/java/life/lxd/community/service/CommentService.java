@@ -3,6 +3,8 @@ package life.lxd.community.service;
 
 import life.lxd.community.dto.CommentDTO;
 import life.lxd.community.enums.CommentTypeEnum;
+import life.lxd.community.enums.NotificationStatusEnum;
+import life.lxd.community.enums.NotificationTypeEnum;
 import life.lxd.community.exception.CustomizeErrorCode;
 import life.lxd.community.exception.CustomizeException;
 import life.lxd.community.mapper.*;
@@ -39,9 +41,12 @@ public class CommentService {
     @Autowired
     private CommentExtMapper commentExtMapper;
 
+    @Autowired
+    private NotificationMapper notificationMapper;
+
     //要么全部完成要么全部失败
     @Transactional
-    public void insert(Comment comment) {
+    public void insert(Comment comment,User commentator) {
         if (comment.getParentId() == null || comment.getParentId() == 0) {
             throw new CustomizeException(CustomizeErrorCode.TARGET_PARAM_NOT_FOUND);
         }
@@ -54,12 +59,18 @@ public class CommentService {
             if (dbComment == null) {
                 throw new CustomizeException(CustomizeErrorCode.COMMENT_NOT_FOUND);
             }
+            Question question = questionMapper.selectByPrimaryKey(dbComment.getParentId());
+            if (question == null) {
+                throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+            }
             commentMapper.insert(comment);
 
             Comment parentComment = new Comment();
             parentComment.setId(comment.getParentId());
             parentComment.setCommentCount(1);
             commentExtMapper.incCommentCount(parentComment);
+            //创建通知
+            createNotify(comment, dbComment.getCommentator(),commentator.getName(),question.getTitle(),question.getId(), NotificationTypeEnum.REPLY_COMMENT);
         }
         else{
             // 回复问题
@@ -71,7 +82,24 @@ public class CommentService {
             commentMapper.insert(comment);
             question.setCommentCount(1);
             questionExtMapper.incCommentCount(question);
+           createNotify(comment, question.getCreator(),commentator.getName(),question.getTitle(),question.getId(), NotificationTypeEnum.REPLY_QUESTION);
         }
+    }
+
+    private void createNotify(Comment comment, Integer receiver, String notifierName, String outerTitle, Integer outerId ,NotificationTypeEnum notificationType) {
+//        if (receiver == comment.getCommentator()) {
+//            return;
+//        }
+        Notification notification = new Notification();
+        notification.setGmtCreate(System.currentTimeMillis());
+        notification.setType(notificationType.getType());
+        notification.setOuterid(outerId);
+        notification.setNotifier(comment.getCommentator());
+        notification.setReceiver(receiver);
+        notification.setStatus(NotificationStatusEnum.UNREAD.getStatus());
+        notification.setNotifierName(notifierName);
+        notification.setOuterTitle(outerTitle);
+        notificationMapper.insert(notification);
     }
 
     public List<CommentDTO> listByTargetId(Integer id,CommentTypeEnum type) {

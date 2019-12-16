@@ -97,6 +97,18 @@ CREATE TABLE `comment` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
+```sql
+CREATE TABLE `notification` (
+  `id` int(11) NOT NULL,
+  `notifier` int(11) NOT NULL,
+  `receiver` int(11) NOT NULL,
+  `outerId` int(11) NOT NULL,
+  `type` int(11) NOT NULL,
+  `gmt_create` bigint(20) NOT NULL,
+  `status` int(10) unsigned zerofill NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
 ```bash
 mvn flyway:migrate
 mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
@@ -141,6 +153,7 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - ctrl+alt+ p 抽参数
 - ctrl+ alt + v 抽变量
 - ctrl+shift+t 浏览器页面回撤
+- ctrl+shift+M 抽取方法的快捷键(选中要抽取的代码快，右键-Refactor-Extract-Method)
 ### Git
 - git init
 - git add README.md

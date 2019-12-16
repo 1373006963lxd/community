@@ -103,6 +103,7 @@ public class QuestionService {
         //分页操作-当前页展示的问题数据
         QuestionExample example = new QuestionExample();
         example.createCriteria().andCreatorEqualTo(userId);
+        example.setOrderByClause("gmt_create desc");
         List<Question> questionList = questionMapper.selectByExampleWithRowbounds(example, new RowBounds(offset, size));
 
         List<QuestionDTO> questionDTOList = new ArrayList<>();
