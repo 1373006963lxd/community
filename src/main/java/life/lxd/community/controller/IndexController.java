@@ -24,13 +24,16 @@ public class IndexController {
     @GetMapping("/")
     public String index(Model model,
                         @RequestParam(name="page",defaultValue = "1") Integer page,
-                        @RequestParam(name="size",defaultValue = "5") Integer size){
+                        @RequestParam(name="size",defaultValue = "5") Integer size,
+                        @RequestParam(name="search",required = false) String search
+    ){
 
         //实现首页展示发表问题列表，主要问题出现头像，需要和question关联，
         //因为question里面没有头像，需要与用户表关联，但是数据库中都是字段，没有引入对象
         //所以引入了DTO,又因为之前用questionMapper返回的是question对象，所以引入了service层来做
-        PaginationDTO pagination = questionService.list(page,size);
+        PaginationDTO pagination = questionService.list(search,page,size);
         model.addAttribute("pagination", pagination);
+        model.addAttribute("search", search);
         return "index";
     }
 }

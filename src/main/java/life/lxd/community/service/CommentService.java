@@ -87,7 +87,8 @@ public class CommentService {
     }
 
     private void createNotify(Comment comment, Integer receiver, String notifierName, String outerTitle, Integer outerId ,NotificationTypeEnum notificationType) {
-//        if (receiver == comment.getCommentator()) {
+                /*不同用户在加上代码*/
+        //        if (receiver == comment.getCommentator()) {
 //            return;
 //        }
         Notification notification = new Notification();

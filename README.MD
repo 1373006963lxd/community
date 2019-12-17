@@ -51,11 +51,12 @@ http://localhost:8887
 [One Tab](https://chrome.google.com/webstore/detail/chphlpgkkbolifaimnlloiipkdnihall)    
 [Live Reload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei/related)  
 [Postman](https://chrome.google.com/webstore/detail/coohjcphdfgbiolnekdpbcijmhambjff)
-[Okhttp](https://square.github.io/okhttp/)
+[Okhttp](https://squar**e.github.io/okhttp/)
 ### 前端资源下载
 - 用于生产环境的 Bootstrap
 - 下载没有解压的[jquery](https://jquery.com)
 - [js-css](https://v3.bootcss.com)
+- [小图标](https://www.iconfont.cn/)
 ## 脚本
 ```sql
 CREATE TABLE `user` (
@@ -181,3 +182,5 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 ### Mysql语句
 - alter table user drop column bio
 - alter table user modify column avatar_url varchar(256);
+### 异常处理(当不清楚到底什么异常的时候--无causeBy)
+- 点击右上角debug->点击左下方debug(红色实心圈)->左上角＋号->java Exception xxx-->赋值(控制台抛的异常)->

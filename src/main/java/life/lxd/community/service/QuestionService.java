@@ -2,6 +2,7 @@ package life.lxd.community.service;
 
 import life.lxd.community.dto.PaginationDTO;
 import life.lxd.community.dto.QuestionDTO;
+import life.lxd.community.dto.QuestionQueryDTO;
 import life.lxd.community.exception.CustomizeErrorCode;
 import life.lxd.community.exception.CustomizeException;
 import life.lxd.community.mapper.QuestionExtMapper;
@@ -29,7 +30,12 @@ public class QuestionService {
     private QuestionExtMapper questionExtMapper;
     @Autowired
     private UserMapper userMapper;
-    public PaginationDTO list(Integer page, Integer size) {
+    public PaginationDTO list(String search,Integer page, Integer size) {
+
+        if (StringUtils.isNotBlank(search)){
+            String[] tags = StringUtils.split(search, " ");
+            search = Arrays.stream(tags).collect(Collectors.joining("|"));
+        }
 
 
         PaginationDTO paginationDTO = new PaginationDTO();
@@ -37,7 +43,9 @@ public class QuestionService {
         Integer totalPage;
 
         //查出问题的总条数
-        Integer totalCount = (int)questionMapper.countByExample(new QuestionExample());
+        QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
+        questionQueryDTO.setSearch(search);
+        Integer totalCount = questionExtMapper.countBySearch(questionQueryDTO);
         //计算总页数
         if(totalCount%size==0){
             totalPage = totalCount/size;
@@ -58,7 +66,9 @@ public class QuestionService {
         //分页操作-当前页展示的问题数据
         QuestionExample questionExample = new QuestionExample();
         questionExample.setOrderByClause("gmt_create desc");
-        List<Question> questionList = questionMapper.selectByExampleWithBLOBsWithRowbounds(questionExample, new RowBounds(offset, size));
+        questionQueryDTO.setSize(size);
+        questionQueryDTO.setPage(offset);
+        List<Question> questionList = questionExtMapper.selectBySearch(questionQueryDTO);
         List<QuestionDTO> questionDTOList = new ArrayList<>();
         //对QuestionDTO赋值
         for (Question question:questionList) {
