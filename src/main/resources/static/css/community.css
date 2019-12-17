@@ -5,7 +5,7 @@ body {
 /*这里面的背景颜色为白色*/
 .main {
     background-color: white;
-    margin: 30px;
+    margin: 10px;
 }
 
 .side {
@@ -151,4 +151,10 @@ body {
 
 .red {
     color: red !important;
+}
+.navigation-notifyCount{
+    margin-left: 5px;
+}
+.navbar-bottom{
+    margin-bottom: 0px;
 }

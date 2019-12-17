@@ -118,6 +118,7 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 >> [Intellij IDEA添加一个“Run运行”选项，使用maven运行mybatis-generator-maven-plugin插件 ](https://www.cnblogs.com/liaojie970/p/7058543.html)<br/>
 >> [MyBatisGenerator配置](https://blog.csdn.net/one_dayR/article/details/85098387)
 >> [moment](http://momentjs.cn/)
+>> [MarkDown](https://pandao.github.io/editor.md/)
 ## 更新日志
 - 2019-7-30 修复 session 过期时间很短问题   
 - 2019-8-2 修复因为*和+号产生的搜索异常问题  
