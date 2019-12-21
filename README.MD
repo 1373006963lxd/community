@@ -120,6 +120,7 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 >> [MyBatisGenerator配置](https://blog.csdn.net/one_dayR/article/details/85098387)
 >> [moment](http://momentjs.cn/)
 >> [MarkDown](https://pandao.github.io/editor.md/)
+>> [MarkDownGithub](https://github.com/pandao/editor.md)
 ## 更新日志
 - 2019-7-30 修复 session 过期时间很短问题   
 - 2019-8-2 修复因为*和+号产生的搜索异常问题  
