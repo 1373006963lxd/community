@@ -194,3 +194,8 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 3.本地带着code通过okHttpClient在github上获取到access_Token到本地
 4.本地获取到access_Token后通过okHttpClient在github上获取githubUser到本地
 5.然后本地存入（更新）用户信息更新登录状态
+
+### .gitignore不起作用
+- git rm -r --cached .
+- git add .
+- git commit -m 'update .gitignore'
