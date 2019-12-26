@@ -20,6 +20,7 @@ public class HotTagCache {
 
     public void updateTags(Map<String, Integer> tags) {
         int max = 10;
+        //实现大顶堆和小顶堆的队列----这里我们实现小顶堆
         PriorityQueue<HotTagDTO> priorityQueue = new PriorityQueue<>(max);
 
         tags.forEach((name, priority) -> {

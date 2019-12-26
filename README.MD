@@ -185,3 +185,10 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - alter table user modify column avatar_url varchar(256);
 ### 异常处理(当不清楚到底什么异常的时候--无causeBy)
 - 点击右上角debug->点击左下方debug(红色实心圈)->左上角＋号->java Exception xxx-->赋值(控制台抛的异常)->
+### 授权登录
+1. <a href="https://github.com/login/oauth/authorize?client_id=047abba9242fa3ff3faa&redirect_uri=http://localhost:8887/callback&scope=user&state=1">登录</a>
+-- 前端根据自己在github上获取的oAuth（自己在github上配置）(Client ID，Client Secret，Authorization callback URL)，github用户地址---你本地callback
+2. github返回一个code到本地
+3.本地带着code通过okHttpClient在github上获取到access_Token到本地
+4.本地获取到access_Token后通过okHttpClient在github上获取githubUser到本地
+5.然后本地存入（更新）用户信息更新登录状态

@@ -22,8 +22,11 @@ public class QuestionController {
     @GetMapping("/question/{id}")
     public String question(@PathVariable(name = "id") Integer id,
     Model model){
+        //查询出该问题
         QuestionDTO questionDTO = questionService.getById(id);
+        //根据当前问题的标签查询出所有与该标签相关的问题
         List<QuestionDTO> relatedQuestions = questionService.selectRelated(questionDTO);
+        //查询出当前问题的评论
         List<CommentDTO> comments = commentService.listByTargetId(id,CommentTypeEnum.QUESTION);
         questionService.incView(id);
         model.addAttribute("question", questionDTO);

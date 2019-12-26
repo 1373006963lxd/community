@@ -93,6 +93,9 @@ body {
     float: right;
     margin-bottom: 10px;
 }
+.btn-hot{
+    margin-bottom: 10px;
+}
 
 .comments {
     padding-bottom: 5px;

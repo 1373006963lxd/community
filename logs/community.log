@@ -1,20 +1,130 @@
-2019-12-21 17:21:43.057  INFO 10480 --- [restartedMain] life.lxd.community.CommunityApplication  : Starting CommunityApplication on PC-201608021440 with PID 10480 (started by Administrator in G:\Spring Boot\论坛项目\lxd\Code)
-2019-12-21 17:21:43.062  INFO 10480 --- [restartedMain] life.lxd.community.CommunityApplication  : No active profile set, falling back to default profiles: default
-2019-12-21 17:21:43.237  INFO 10480 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-12-21 17:21:43.237  INFO 10480 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-12-21 17:21:46.224  INFO 10480 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
-2019-12-21 17:21:46.242  INFO 10480 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-21 17:21:46.243  INFO 10480 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-21 17:21:46.611  INFO 10480 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-21 17:21:46.612  INFO 10480 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3374 ms
-2019-12-21 17:21:46.734  INFO 10480 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-12-21 17:21:47.570  INFO 10480 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-12-21 17:21:47.580  INFO 10480 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/user?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false'
-2019-12-21 17:21:50.253  INFO 10480 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-21 17:21:50.441  INFO 10480 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2019-12-21 17:21:51.131  INFO 10480 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-12-21 17:21:51.257  INFO 10480 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
-2019-12-21 17:21:51.264  INFO 10480 --- [restartedMain] life.lxd.community.CommunityApplication  : Started CommunityApplication in 10.297 seconds (JVM running for 13.217)
-2019-12-21 17:22:05.460  INFO 10480 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-21 17:22:05.461  INFO 10480 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-21 17:22:05.474  INFO 10480 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2019-12-26 10:06:17.335  INFO 6208 --- [Thread-104] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-26 10:06:17.347  INFO 6208 --- [Thread-104] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Shutdown initiated...
+2019-12-26 10:06:17.410  INFO 6208 --- [Thread-104] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Shutdown completed.
+2019-12-26 10:06:21.778  INFO 6208 --- [restartedMain] life.lxd.community.CommunityApplication  : Starting CommunityApplication on PC-201608021440 with PID 6208 (started by Administrator in G:\Spring Boot\论坛项目\lxd\Code)
+2019-12-26 10:06:21.779  INFO 6208 --- [restartedMain] life.lxd.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2019-12-26 10:06:22.902  WARN 6208 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2019-12-26 10:06:23.238  INFO 6208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-12-26 10:06:23.240  INFO 6208 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-26 10:06:23.240  INFO 6208 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-26 10:06:23.366  INFO 6208 --- [restartedMain] o.a.c.c.C.[Tomcat-7].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2019-12-26 10:06:23.367  INFO 6208 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1580 ms
+2019-12-26 10:06:23.401  INFO 6208 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Starting...
+2019-12-26 10:06:23.410  INFO 6208 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Start completed.
+2019-12-26 10:06:23.410  INFO 6208 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/user?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false'
+2019-12-26 10:06:23.997  INFO 6208 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-26 10:06:24.048  INFO 6208 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-12-26 10:06:24.763  INFO 6208 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-12-26 10:06:24.905  INFO 6208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2019-12-26 10:06:24.906  INFO 6208 --- [restartedMain] life.lxd.community.CommunityApplication  : Started CommunityApplication in 3.233 seconds (JVM running for 54552.304)
+2019-12-26 10:06:24.909  INFO 6208 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-12-26 10:06:39.099  INFO 6208 --- [http-nio-8887-exec-2] o.a.c.c.C.[Tomcat-7].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-26 10:06:39.100  INFO 6208 --- [http-nio-8887-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-26 10:06:39.107  INFO 6208 --- [http-nio-8887-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2019-12-26 12:04:19.775  INFO 8632 --- [restartedMain] life.lxd.community.CommunityApplication  : Starting CommunityApplication on PC-201608021440 with PID 8632 (started by Administrator in G:\Spring Boot\论坛项目\lxd\Code)
+2019-12-26 12:04:19.785  INFO 8632 --- [restartedMain] life.lxd.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2019-12-26 12:04:19.912  INFO 8632 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-12-26 12:04:19.912  INFO 8632 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-12-26 12:04:23.230  INFO 8632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-12-26 12:04:23.250  INFO 8632 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-26 12:04:23.251  INFO 8632 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-26 12:04:23.573  INFO 8632 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-26 12:04:23.574  INFO 8632 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3661 ms
+2019-12-26 12:04:23.699  INFO 8632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-12-26 12:04:24.190  INFO 8632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-12-26 12:04:24.199  INFO 8632 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/user?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false'
+2019-12-26 12:04:26.138  INFO 8632 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-26 12:04:26.275  INFO 8632 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-12-26 12:04:26.551  INFO 8632 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-12-26 12:04:26.881  INFO 8632 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-12-26 12:04:26.952  INFO 8632 --- [scheduling-1] life.lxd.community.schedule.HotTagTasks  : hotTagSchedule start Thu Dec 26 12:04:26 CST 2019
+2019-12-26 12:04:27.008  INFO 8632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2019-12-26 12:04:27.015  INFO 8632 --- [restartedMain] life.lxd.community.CommunityApplication  : Started CommunityApplication in 8.921 seconds (JVM running for 11.844)
+2019-12-26 12:04:27.091  INFO 8632 --- [scheduling-1] life.lxd.community.schedule.HotTagTasks  : hotTagSchedule stop Thu Dec 26 12:04:27 CST 2019
+2019-12-26 12:04:42.406  INFO 8632 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-26 12:04:42.406  INFO 8632 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-26 12:04:42.419  INFO 8632 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2019-12-26 12:15:16.437  INFO 8632 --- [Thread-9] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-12-26 12:15:16.439  INFO 8632 --- [Thread-9] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-26 12:15:16.441  INFO 8632 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-12-26 12:15:16.451  INFO 8632 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-12-26 12:15:17.631  INFO 8632 --- [restartedMain] life.lxd.community.CommunityApplication  : Starting CommunityApplication on PC-201608021440 with PID 8632 (started by Administrator in G:\Spring Boot\论坛项目\lxd\Code)
+2019-12-26 12:15:17.632  INFO 8632 --- [restartedMain] life.lxd.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2019-12-26 12:15:18.589  WARN 8632 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2019-12-26 12:15:18.814  INFO 8632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-12-26 12:15:18.815  INFO 8632 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-26 12:15:18.816  INFO 8632 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-26 12:15:18.923  INFO 8632 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-26 12:15:18.923  INFO 8632 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1283 ms
+2019-12-26 12:15:18.970  INFO 8632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2019-12-26 12:15:18.988  INFO 8632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2019-12-26 12:15:18.988  INFO 8632 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/user?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false'
+2019-12-26 12:15:31.500  INFO 7776 --- [restartedMain] life.lxd.community.CommunityApplication  : Starting CommunityApplication on PC-201608021440 with PID 7776 (started by Administrator in G:\Spring Boot\论坛项目\lxd\Code)
+2019-12-26 12:15:31.506  INFO 7776 --- [restartedMain] life.lxd.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2019-12-26 12:15:31.724  INFO 7776 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-12-26 12:15:31.724  INFO 7776 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-12-26 12:15:35.997  INFO 7776 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-12-26 12:15:36.014  INFO 7776 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-26 12:15:36.014  INFO 7776 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-26 12:15:36.315  INFO 7776 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-26 12:15:36.315  INFO 7776 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4591 ms
+2019-12-26 12:15:36.426  INFO 7776 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-12-26 12:15:36.824  INFO 7776 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-12-26 12:15:36.834  INFO 7776 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/user?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false'
+2019-12-26 12:15:39.463  INFO 7776 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-26 12:15:39.650  INFO 7776 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-12-26 12:15:40.121  INFO 7776 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-12-26 12:15:40.547  INFO 7776 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-12-26 12:15:40.613  INFO 7776 --- [scheduling-1] life.lxd.community.schedule.HotTagTasks  : hotTagSchedule start Thu Dec 26 12:15:40 CST 2019
+2019-12-26 12:15:40.679  INFO 7776 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2019-12-26 12:15:40.686  INFO 7776 --- [restartedMain] life.lxd.community.CommunityApplication  : Started CommunityApplication in 10.775 seconds (JVM running for 14.342)
+2019-12-26 12:15:40.779  INFO 7776 --- [scheduling-1] life.lxd.community.schedule.HotTagTasks  : hotTagSchedule stop Thu Dec 26 12:15:40 CST 2019
+2019-12-26 12:16:01.663  INFO 7776 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-26 12:16:01.663  INFO 7776 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-26 12:16:01.678  INFO 7776 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2019-12-26 12:26:34.230  INFO 2284 --- [restartedMain] life.lxd.community.CommunityApplication  : Starting CommunityApplication on PC-201608021440 with PID 2284 (started by Administrator in G:\Spring Boot\论坛项目\lxd\Code)
+2019-12-26 12:26:34.237  INFO 2284 --- [restartedMain] life.lxd.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2019-12-26 12:26:34.399  INFO 2284 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-12-26 12:26:34.399  INFO 2284 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-12-26 12:26:37.838  INFO 2284 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-12-26 12:26:37.854  INFO 2284 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-26 12:26:37.855  INFO 2284 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-26 12:26:38.145  INFO 2284 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-26 12:26:38.146  INFO 2284 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3746 ms
+2019-12-26 12:26:38.242  INFO 2284 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-12-26 12:26:38.548  INFO 2284 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-12-26 12:26:38.555  INFO 2284 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/user?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false'
+2019-12-26 12:26:39.760  INFO 2284 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-26 12:26:39.926  INFO 2284 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-12-26 12:26:40.279  INFO 2284 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-12-26 12:26:40.619  INFO 2284 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-12-26 12:26:40.675  INFO 2284 --- [scheduling-1] life.lxd.community.schedule.HotTagTasks  : hotTagSchedule start Thu Dec 26 12:26:40 CST 2019
+2019-12-26 12:26:40.727  INFO 2284 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2019-12-26 12:26:40.733  INFO 2284 --- [restartedMain] life.lxd.community.CommunityApplication  : Started CommunityApplication in 7.593 seconds (JVM running for 10.179)
+2019-12-26 12:26:40.814  INFO 2284 --- [scheduling-1] life.lxd.community.schedule.HotTagTasks  : hotTagSchedule stop Thu Dec 26 12:26:40 CST 2019
+2019-12-26 12:26:44.608  INFO 2284 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-26 12:26:44.609  INFO 2284 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-26 12:26:44.624  INFO 2284 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2019-12-26 12:29:27.165  INFO 8444 --- [restartedMain] life.lxd.community.CommunityApplication  : Starting CommunityApplication on PC-201608021440 with PID 8444 (started by Administrator in G:\Spring Boot\论坛项目\lxd\Code)
+2019-12-26 12:29:27.183  INFO 8444 --- [restartedMain] life.lxd.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2019-12-26 12:29:27.299  INFO 8444 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-12-26 12:29:27.300  INFO 8444 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-12-26 12:29:31.197  INFO 8444 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-12-26 12:29:31.226  INFO 8444 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-26 12:29:31.227  INFO 8444 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-26 12:29:31.613  INFO 8444 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-26 12:29:31.614  INFO 8444 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4314 ms
+2019-12-26 12:29:31.769  INFO 8444 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-12-26 12:29:32.212  INFO 8444 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-12-26 12:29:32.218  INFO 8444 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/user?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false'
+2019-12-26 12:29:33.374  INFO 8444 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-26 12:29:33.508  INFO 8444 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-12-26 12:29:33.772  INFO 8444 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-12-26 12:29:34.081  INFO 8444 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-12-26 12:29:34.133  INFO 8444 --- [scheduling-1] life.lxd.community.schedule.HotTagTasks  : hotTagSchedule start Thu Dec 26 12:29:34 CST 2019
+2019-12-26 12:29:34.181  INFO 8444 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2019-12-26 12:29:34.188  INFO 8444 --- [restartedMain] life.lxd.community.CommunityApplication  : Started CommunityApplication in 8.487 seconds (JVM running for 12.972)
+2019-12-26 12:29:34.262  INFO 8444 --- [scheduling-1] life.lxd.community.schedule.HotTagTasks  : hotTagSchedule stop Thu Dec 26 12:29:34 CST 2019
+2019-12-26 12:29:38.933  INFO 8444 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-26 12:29:38.934  INFO 8444 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-26 12:29:38.951  INFO 8444 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms

@@ -5,6 +5,7 @@ import life.lxd.community.dto.GithubUser;
 import life.lxd.community.model.User;
 import life.lxd.community.provider.GithubProvider;
 import life.lxd.community.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
 @Controller
+//做项目的时候打印日志
+@Slf4j
 public class AuthorizeController {
 
     @Autowired
@@ -41,6 +44,7 @@ public class AuthorizeController {
         accessTokenDTO.setClient_id(clientId);
         accessTokenDTO.setClient_secret(clientSecret);
         //通过github回调给用户端的github用户的code
+        log.info(code);
         accessTokenDTO.setCode(code);
         //从github中跳转到社区
         accessTokenDTO.setRedirect_uri(redirectUri);
@@ -64,6 +68,7 @@ public class AuthorizeController {
             response.addCookie(new Cookie("token", token));
             return "redirect:/";
         }else{
+            log.error("callback get github error,{}",githubUser);
             //登录失败
             return "redirect:/";
         }

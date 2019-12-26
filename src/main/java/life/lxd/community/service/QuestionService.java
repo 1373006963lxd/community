@@ -30,7 +30,7 @@ public class QuestionService {
     private QuestionExtMapper questionExtMapper;
     @Autowired
     private UserMapper userMapper;
-    public PaginationDTO list(String search,Integer page, Integer size) {
+    public PaginationDTO list(String search,String tag,Integer page, Integer size) {
 
         if (StringUtils.isNotBlank(search)){
             String[] tags = StringUtils.split(search, " ");
@@ -38,28 +38,31 @@ public class QuestionService {
         }
 
 
+
         PaginationDTO paginationDTO = new PaginationDTO();
         //总页数
         Integer totalPage;
 
-        //查出问题的总条数
         QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
         questionQueryDTO.setSearch(search);
+        questionQueryDTO.setTag(tag);
+        //1.查询总数据个数
         Integer totalCount = questionExtMapper.countBySearch(questionQueryDTO);
-        //计算总页数
+        //2.计算总页数
         if(totalCount%size==0){
             totalPage = totalCount/size;
         }else{
             totalPage = totalCount/size+1;
         }
 
+        //判断页数边界值判断
         if(page<1){
             page=1;
         }
         if(page>totalPage){
             page = totalPage;
         }
-        //进行paginationDTO的封装操作
+        //进行paginationDTO的封装操作（页面需要显示的页码及上一页下一页第一页最后一页是否显示设置）
         paginationDTO.setPagination(totalPage, page);
         //size*(page-1)
         Integer offset = size*(page-1);
@@ -68,7 +71,9 @@ public class QuestionService {
         questionExample.setOrderByClause("gmt_create desc");
         questionQueryDTO.setSize(size);
         questionQueryDTO.setPage(offset);
+        //根据当前页展示的数据数，及第几条数据开始----查询出当前页所要显示的问题数据
         List<Question> questionList = questionExtMapper.selectBySearch(questionQueryDTO);
+        //对所有问题进行DTO的封装后存入这个列表中
         List<QuestionDTO> questionDTOList = new ArrayList<>();
         //对QuestionDTO赋值
         for (Question question:questionList) {
@@ -79,6 +84,7 @@ public class QuestionService {
             questionDTO.setUser(user);
             questionDTOList.add(questionDTO);
         }
+        //封装paginationDTO的最后一个参数---当前页相关数据
         paginationDTO.setData(questionDTOList);
         return paginationDTO;
     }
