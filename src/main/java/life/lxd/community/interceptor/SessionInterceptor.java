@@ -1,11 +1,14 @@
 package life.lxd.community.interceptor;
 
 
+import life.lxd.community.enums.AdPosEnum;
 import life.lxd.community.mapper.UserMapper;
 import life.lxd.community.model.User;
 import life.lxd.community.model.UserExample;
+import life.lxd.community.service.AdService;
 import life.lxd.community.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -14,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -26,8 +30,21 @@ public class SessionInterceptor implements HandlerInterceptor {
     private UserMapper userMapper;
     @Autowired
     private NotificationService notificationService;
+    @Autowired
+    private AdService adService;
+    @Value("${github.redirect.uri}")
+    private String redirectUrl;
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        //设置context级别属性
+        request.getServletContext().setAttribute("redirectUrl", redirectUrl);
+        //没有登录的时候可以查看导航
+        for(AdPosEnum adPos:AdPosEnum.values()) {
+            request.getServletContext().setAttribute(adPos.name(), adService.list(adPos.name()));
+        }
+       /* HttpSession session = request.getSession();
+        session.setAttribute("ads", adService.list());*/
+
         Cookie[] cookies = request.getCookies();
         if(cookies!=null&&cookies.length!=0){
             for (Cookie cookie:cookies) {
@@ -38,9 +55,10 @@ public class SessionInterceptor implements HandlerInterceptor {
                             .andTokenEqualTo(token);
                     List<User> users = userMapper.selectByExample(userExample);
                     if (users.size() != 0) {
-                        request.getSession().setAttribute("user", users.get(0));
+                        HttpSession session = request.getSession();
+                        session.setAttribute("user", users.get(0));
                         Long unreadCount = notificationService.unreadCount(users.get(0).getId());
-                        request.getSession().setAttribute("unreadCount", unreadCount);
+                        session.setAttribute("unreadCount", unreadCount);
                     }
                     break;
                 }

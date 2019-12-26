@@ -40,6 +40,8 @@
         </table>
         <table tableName="notification" domainObjectName="Notification" >
         </table>
+        <table tableName="ad" domainObjectName="Ad" >
+        </table>
 
     </context>
 </generatorConfiguration>

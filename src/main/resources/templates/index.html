@@ -82,35 +82,21 @@
         <!--            右边栏-->
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-                <h4>热门标签</h4>
-                <span class="label label-info question-tag">
-                <span class="glyphicon glyphicon-tags">
-                    <a href="/?page=1&amp;search=&amp;tag=java&amp;sort=" class="community-tag">java</a>
-                </span>
-                </span>
-                <span class="label label-info question-tag">
-                    <span class="glyphicon glyphicon-tags">
-                    <a href="/?page=1&amp;search=&amp;tag=linux&amp;sort=" class="community-tag">spring</a>
-                   </span>
-                </span>
-            </div>
-            <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h4>感谢关注</h4>
                 <img class="img-thumbnail question-wechat" src="/images/wechat.jpg"/>
-            </div>
+            </div>-->
+            <div th:insert="~{side :: side}"></div>
             <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h4>热门标签</h4>
                 <ul class="question-related">
                     <li th:each="tag:${tags}" class="btn-hot">
                         <span class="label label-info question-tag">
-                    <span class="glyphicon glyphicon-tags">
+                        <span class="glyphicon glyphicon-tags">
                         <a th:href="@{/(page=1,search=${search},tag=${tag})}" th:text="${tag}">
                         </a>
-                         </span>
-                </span>
+                        </span>
+                        </span>
                     </li>
                 </ul>
             </div>
