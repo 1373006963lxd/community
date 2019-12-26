@@ -110,6 +110,21 @@ CREATE TABLE `notification` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
+```sql
+CREATE TABLE `ad` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(256) DEFAULT NULL,
+  `url` varchar(512) DEFAULT NULL,
+  `image` varchar(256) DEFAULT NULL,
+  `gmt_start` bigint(20) NOT NULL,
+  `gmt_end` bigint(20) NOT NULL,
+  `gmt_create` bigint(20) NOT NULL,
+  `gmt_modified` bigint(20) NOT NULL,
+  `status` int(11) NOT NULL,
+  `pos` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+```
 ```bash
 mvn flyway:migrate
 mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
