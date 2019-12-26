@@ -214,3 +214,8 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - git rm -r --cached .
 - git add .
 - git commit -m 'update .gitignore'
+### git从master上合并money中的代码(前提是在当前money分支上已经解决push等更改文件)
+- git checkout master
+- git merge money
+- esc->:->wq
+- git status 
