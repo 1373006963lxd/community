@@ -128,3 +128,157 @@
 2019-12-26 12:29:38.933  INFO 8444 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2019-12-26 12:29:38.934  INFO 8444 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2019-12-26 12:29:38.951  INFO 8444 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2019-12-26 12:31:25.959  INFO 9196 --- [restartedMain] life.lxd.community.CommunityApplication  : Starting CommunityApplication on PC-201608021440 with PID 9196 (started by Administrator in G:\Spring Boot\论坛项目\lxd\Code)
+2019-12-26 12:31:25.964  INFO 9196 --- [restartedMain] life.lxd.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2019-12-26 12:31:26.200  INFO 9196 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-12-26 12:31:26.200  INFO 9196 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-12-26 12:31:31.208  INFO 9196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-12-26 12:31:31.242  INFO 9196 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-26 12:31:31.275  INFO 9196 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-26 12:31:31.717  INFO 9196 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-26 12:31:31.718  INFO 9196 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5518 ms
+2019-12-26 12:31:31.833  INFO 9196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-12-26 12:31:32.204  INFO 9196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-12-26 12:31:32.212  INFO 9196 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/user?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false'
+2019-12-26 12:31:33.841  INFO 9196 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-26 12:31:33.953  INFO 9196 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-12-26 12:31:34.227  INFO 9196 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-12-26 12:31:34.619  INFO 9196 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-12-26 12:31:34.713  INFO 9196 --- [scheduling-1] life.lxd.community.schedule.HotTagTasks  : hotTagSchedule start Thu Dec 26 12:31:34 CST 2019
+2019-12-26 12:31:34.785  INFO 9196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2019-12-26 12:31:34.793  INFO 9196 --- [restartedMain] life.lxd.community.CommunityApplication  : Started CommunityApplication in 9.941 seconds (JVM running for 12.485)
+2019-12-26 12:31:34.889  INFO 9196 --- [scheduling-1] life.lxd.community.schedule.HotTagTasks  : hotTagSchedule stop Thu Dec 26 12:31:34 CST 2019
+2019-12-26 12:32:42.318  INFO 9196 --- [http-nio-8887-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-26 12:32:42.319  INFO 9196 --- [http-nio-8887-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-26 12:32:42.330  INFO 9196 --- [http-nio-8887-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2019-12-26 15:31:34.989  INFO 9196 --- [scheduling-1] life.lxd.community.schedule.HotTagTasks  : hotTagSchedule start Thu Dec 26 15:31:34 CST 2019
+2019-12-26 15:31:34.997  INFO 9196 --- [scheduling-1] life.lxd.community.schedule.HotTagTasks  : hotTagSchedule stop Thu Dec 26 15:31:34 CST 2019
+2019-12-26 16:00:36.638  INFO 9196 --- [Thread-15] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-12-26 16:00:36.653  INFO 9196 --- [Thread-15] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-26 16:00:36.655  INFO 9196 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-12-26 16:00:36.704  INFO 9196 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-12-26 16:00:38.808  INFO 9196 --- [restartedMain] life.lxd.community.CommunityApplication  : Starting CommunityApplication on PC-201608021440 with PID 9196 (started by Administrator in G:\Spring Boot\论坛项目\lxd\Code)
+2019-12-26 16:00:38.809  INFO 9196 --- [restartedMain] life.lxd.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2019-12-26 16:00:39.741  WARN 9196 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2019-12-26 16:00:39.923  INFO 9196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-12-26 16:00:39.925  INFO 9196 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-26 16:00:39.926  INFO 9196 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-26 16:00:40.020  INFO 9196 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-26 16:00:40.021  INFO 9196 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1198 ms
+2019-12-26 16:00:40.072  INFO 9196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2019-12-26 16:00:40.086  INFO 9196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2019-12-26 16:00:40.086  INFO 9196 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/user?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false'
+2019-12-26 16:00:40.623  INFO 9196 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-26 16:00:40.908  INFO 9196 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-12-26 16:00:41.088  INFO 9196 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-12-26 16:00:41.431  INFO 9196 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-12-26 16:00:41.501  INFO 9196 --- [scheduling-1] life.lxd.community.schedule.HotTagTasks  : hotTagSchedule start Thu Dec 26 16:00:41 CST 2019
+2019-12-26 16:00:41.629  INFO 9196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2019-12-26 16:00:41.832  INFO 9196 --- [restartedMain] life.lxd.community.CommunityApplication  : Started CommunityApplication in 3.158 seconds (JVM running for 12559.205)
+2019-12-26 16:00:41.836  INFO 9196 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-12-26 16:00:41.856  INFO 9196 --- [scheduling-1] life.lxd.community.schedule.HotTagTasks  : hotTagSchedule stop Thu Dec 26 16:00:41 CST 2019
+2019-12-26 16:00:52.154  INFO 9196 --- [Thread-23] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-12-26 16:00:52.155  INFO 9196 --- [Thread-23] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-26 16:00:52.157  INFO 9196 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2019-12-26 16:00:52.217  INFO 9196 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2019-12-26 16:00:54.175  INFO 9196 --- [restartedMain] life.lxd.community.CommunityApplication  : Starting CommunityApplication on PC-201608021440 with PID 9196 (started by Administrator in G:\Spring Boot\论坛项目\lxd\Code)
+2019-12-26 16:00:54.176  INFO 9196 --- [restartedMain] life.lxd.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2019-12-26 16:00:55.006  WARN 9196 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2019-12-26 16:00:55.198  INFO 9196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-12-26 16:00:55.199  INFO 9196 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-26 16:00:55.200  INFO 9196 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-26 16:00:55.278  INFO 9196 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-26 16:00:55.279  INFO 9196 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1095 ms
+2019-12-26 16:00:55.313  INFO 9196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2019-12-26 16:00:55.322  INFO 9196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2019-12-26 16:00:55.323  INFO 9196 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/user?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false'
+2019-12-26 16:00:55.364  WARN 9196 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authorizeController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userService': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [life.lxd.community.service.UserService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@5f8cd19a]
+2019-12-26 16:00:55.365  INFO 9196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2019-12-26 16:00:55.368  INFO 9196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2019-12-26 16:00:55.369  INFO 9196 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-12-26 16:00:55.389  INFO 9196 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-26 16:00:55.413 ERROR 9196 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authorizeController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userService': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [life.lxd.community.service.UserService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@5f8cd19a]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:397) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1429) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at life.lxd.community.CommunityApplication.main(CommunityApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userService': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [life.lxd.community.service.UserService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@5f8cd19a]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:287) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1286) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1201) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:636) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	... 24 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [life.lxd.community.service.UserService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@5f8cd19a]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:477) ~[spring-core-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:318) ~[spring-core-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:265) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	... 36 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: life/lxd/community/model/User
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.8.0_131]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701) ~[na:1.8.0_131]
+	at java.lang.Class.getDeclaredMethods(Class.java:1975) ~[na:1.8.0_131]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:459) ~[spring-core-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	... 38 common frames omitted
+Caused by: java.lang.ClassNotFoundException: life.lxd.community.model.User
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_131]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_131]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:335) ~[na:1.8.0_131]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_131]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:144) ~[spring-boot-devtools-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_131]
+	... 42 common frames omitted
+
+2019-12-26 16:01:01.868  INFO 9196 --- [restartedMain] life.lxd.community.CommunityApplication  : Starting CommunityApplication on PC-201608021440 with PID 9196 (started by Administrator in G:\Spring Boot\论坛项目\lxd\Code)
+2019-12-26 16:01:01.868  INFO 9196 --- [restartedMain] life.lxd.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2019-12-26 16:01:02.645  WARN 9196 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2019-12-26 16:01:02.837  INFO 9196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2019-12-26 16:01:02.839  INFO 9196 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-26 16:01:02.839  INFO 9196 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-26 16:01:02.926  INFO 9196 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2019-12-26 16:01:02.926  INFO 9196 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1051 ms
+2019-12-26 16:01:02.963  INFO 9196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2019-12-26 16:01:02.972  INFO 9196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2019-12-26 16:01:02.972  INFO 9196 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/user?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false'
+2019-12-26 16:01:03.441  INFO 9196 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-26 16:01:03.490  INFO 9196 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-12-26 16:01:03.647  INFO 9196 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-12-26 16:01:04.331  INFO 9196 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-12-26 16:01:04.387  INFO 9196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2019-12-26 16:01:04.389  INFO 9196 --- [restartedMain] life.lxd.community.CommunityApplication  : Started CommunityApplication in 2.596 seconds (JVM running for 12581.761)
+2019-12-26 16:01:04.392  INFO 9196 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-12-26 16:01:04.387  INFO 9196 --- [scheduling-1] life.lxd.community.schedule.HotTagTasks  : hotTagSchedule start Thu Dec 26 16:01:04 CST 2019
+2019-12-26 16:01:04.417  INFO 9196 --- [scheduling-1] life.lxd.community.schedule.HotTagTasks  : hotTagSchedule stop Thu Dec 26 16:01:04 CST 2019
