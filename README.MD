@@ -121,6 +121,8 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 >> [moment](http://momentjs.cn/)
 >> [MarkDown](https://pandao.github.io/editor.md/)
 >> [MarkDownGithub](https://github.com/pandao/editor.md)
+>> [码匠特惠书城连接](https://detail.youzan.com/show/goods/newest?alias=2xj0uxwujrwg6)
+>> [时间戳转化网站](https://tool.lu/timestamp/)
 ## 更新日志
 - 2019-7-30 修复 session 过期时间很短问题   
 - 2019-8-2 修复因为*和+号产生的搜索异常问题  

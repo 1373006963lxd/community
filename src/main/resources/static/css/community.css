@@ -56,6 +56,9 @@ body {
     width: 95%;
 }
 
+.question-footer{
+    width: 5%;
+}
 .publish-tag-tab {
     display: none;
     margin-top: 10px;
