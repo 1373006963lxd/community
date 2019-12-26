@@ -219,3 +219,4 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - git merge money
 - esc->:->wq
 - git status 
+- git push
