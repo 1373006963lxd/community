@@ -188,6 +188,7 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - git status 可以查看每一步操作后的状态
 - git branch branch1(分支名)  创建分支
 - git checkout branch1   切换到指定分支
+- git commit --amend --no-edit  当提交代码以后，又改了一个地方可以使用追加的形式到github，先git add . 然后执行这个命令
 - git托管，当代码改错地方时候，可以文件-右键-git-revert即可回去
 - 项目-右键-git-showhistory-查看提交历史-双击即可查看对比修改的页面(类同SVN)
 - 项目-右键-localhistory-查看历史记录
