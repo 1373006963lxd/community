@@ -23,20 +23,21 @@
 <!--    栅格系统-->
 <div class="container-fluid main">
     <div class="row">
-        <!--            左边栏-->
+        <!--            左边栏  大屏幕-中等屏幕-小屏幕-超小屏幕 的布局-->
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
             <h2><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>发起</h2>
             <hr>
-
+        <!--当你填写完表单submit的时候提交的地址-->
             <form action="/publish" method="post">
                 <input type="hidden" name="id" th:value="${id}">
                 <div class="form-group">
                     <label for="title">问题标题(简单扼要)</label>
+                    <!-- thymeleaf通过th:value设置input的值-->
                     <input type="text" class="form-control" id="title" autocomplete="off" th:value="${title}"
                            name="title" placeholder="问题标题......">
                 </div>
+                <label for="description">问题补充(必填，请参考右侧提示)</label>
                 <div class="form-group" id="question-editor">
-                    <label for="description">问题补充(必填，请参考右侧提示)</label>
                     <!--                    textarea中的内容不能回显，需要将th:value换成th:text-->
                     <textarea name="description" id="description" th:text="${description}"  style="display:none;" class="form-control"
                               cols="30" rows="10"></textarea>
@@ -88,7 +89,8 @@
                 </div>
                 <div class="container-fluid main">
                     <div class="row">
-                        <div class=" col-lg-9 col-md-12 col-sm-12 col-xs-12"></div>
+                        <!--  这里的目的就是当没有错误信息的时候左边还是占9份 避免button的位置在右边                     -->
+                        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12"></div>
                         <div class="alert alert-danger col-lg-9 col-md-12 col-sm-12 col-xs-12"
                              th:text="${error}" th:if="${error!=null}"
                         >
@@ -103,12 +105,13 @@
         <!--            右边栏-->
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <h3>问题发起指南</h3>
-            ~ 问题标题：请用精简的语句描述你所发布的问题，不超过25字<br>
-            ~ 问题补充：详细补充您的问题内容，并确保问题描述清晰直观，并提供一些相关的资料<br>
-            ~ 选择标签：选择一个或者多个合适的标签，用逗号分隔开，每个标签不超过10个字
+            ~ 问题标题：请用精简的语句描述你所发布的问题，不超过25字。<br>
+            ~ 问题补充：详细补充您的问题内容，并确保问题描述清晰直观，并提供一些相关的资料。<br>
+            ~ 选择标签：选择一个或者多个合适的标签，用逗号分隔开，每个标签不超过10个字。
         </div>
     </div>
 </div>
+<!--底边-->
 <div th:insert="~{footer :: foot}" ></div>
 </body>
 </html>

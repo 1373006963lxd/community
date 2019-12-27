@@ -52,6 +52,7 @@ public class PublishController {
             Model model
     ) {
 
+//        放在前面回显的目的是在点击提交后如果不符合要求需要回显填写的内容
         model.addAttribute("title", title);
         model.addAttribute("description", description);
         model.addAttribute("tag", tag);
