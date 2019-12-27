@@ -221,3 +221,5 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - esc->:->wq
 - git status 
 - git push
+### 授权登录图解
+![OAuth](/images/OAuth.jpg)
