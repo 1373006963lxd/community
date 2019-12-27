@@ -45,6 +45,8 @@ public class SessionInterceptor implements HandlerInterceptor {
        /* HttpSession session = request.getSession();
         session.setAttribute("ads", adService.list());*/
 
+//       将token写入数据库后，通过前端的cookie去数据库中查询是否有这个用户数据，
+//        如果有则将user写入session中，前端就可以通过session展示用户名还是登录
         Cookie[] cookies = request.getCookies();
         if(cookies!=null&&cookies.length!=0){
             for (Cookie cookie:cookies) {
@@ -56,6 +58,7 @@ public class SessionInterceptor implements HandlerInterceptor {
                     List<User> users = userMapper.selectByExample(userExample);
                     if (users.size() != 0) {
                         HttpSession session = request.getSession();
+                        //注册用户信息---如果没有指定cookie，会自动生成一个JSESSIONID，然后在再次请求的时候会带着这个去session中查找是否有用户
                         session.setAttribute("user", users.get(0));
                         Long unreadCount = notificationService.unreadCount(users.get(0).getId());
                         session.setAttribute("unreadCount", unreadCount);

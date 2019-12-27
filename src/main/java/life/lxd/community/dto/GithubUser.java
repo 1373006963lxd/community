@@ -8,6 +8,7 @@ import lombok.Data;
  */
 @Data
 public class GithubUser {
+    //用户名
     private String name;
     private Long id;
     //描述

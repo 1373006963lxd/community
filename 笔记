@@ -1,15 +1,17 @@
 栅格系统：根据前端的设置实现页面布局
+@Component的目的就是把当前类初始化到spring容器的上下文中，最直观的就是不用再去new这个类，直接注入即可
 github授权登录：
 1.github上下面API，里面有一个Build a github App or an OAuth App,然后右边栏里面有Building OAuth Apps，之后完成4个步骤
 
 2.首先在github上注册一个github账号setting->Developer Setting->OAuth Apps->NEW OAuth App->进行填写相关信息其中callbackUrl非常重要
    2.1 Request a user's GitHub identity（请求用户的github身份）
-      th:href="@{https://github.com/login/oauth/authorize(client_id='047abba9242fa3ff3faa',redirect_uri=${#httpServletRequest.getServletContext().getAttribute('redirectUrl')},scope='user',state=1)}"
+      前端通过点击登录按钮携带参数th:href="@{https://github.com/login/oauth/authorize(client_id='047abba9242fa3ff3faa',redirect_uri=${#httpServletRequest.getServletContext().getAttribute('redirectUrl')},scope='user',state=1)}"到github
       2.1.1  GET https://github.com/login/oauth/authorize
-      2.1.2 参数： client_id redirect_uri state login scopes（现在可选填）
+      2.1.2 参数： client_id redirect_uri（github自动跳转的uri） state login（选填） scopes（现在可选填可以只获取user信息）
+      自动跳转uri后，携带code和state
    2.2 Users are redirected back to your site by GitHub （github将重定向到你设置的callback地址）
-      2.2.1 github用户将返回一个临时的code，然后本地将带着这个code和请求"https://github.com/login/oauth/access_token"到github
-      2.2.2 POST https://github.com/login/oauth/access_token
+      2.2.1 github用户将返回一个临时的code及state，然后本地将带着这个code及state和通过okHttpclient请求"https://github.com/login/oauth/access_token"到github
+      2.2.2 POST https://github.com/login/oauth/access_token（获取access_token）
       2.2.3 参数： client_id client_secret code redirect_uri state
    2.3  Your GitHub App accesses the API with the user's access token（您的GitHub应用使用用户的访问令牌访问API）
       2.3.1 github返回access_Token到本地

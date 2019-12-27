@@ -174,6 +174,7 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 - ctrl+ alt + v 抽变量
 - ctrl+shift+t 浏览器页面回撤
 - ctrl+shift+M 抽取方法的快捷键(选中要抽取的代码快，右键-Refactor-Extract-Method)
+- alt+tab 快速切换页面
 ### Git
 - git init
 - git add README.md

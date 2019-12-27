@@ -39,8 +39,10 @@ public class AuthorizeController {
     public String callback(@RequestParam(name="code") String code,
                            @RequestParam(name="state") String state,
                             HttpServletRequest request,HttpServletResponse response){
+        //参数操作两个以上一般就要封装成对象去做
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
-        //申请的
+
+        //申请的下面参数的设置可以使用构造函数来实现直接在new 中传参
         accessTokenDTO.setClient_id(clientId);
         accessTokenDTO.setClient_secret(clientSecret);
         //通过github回调给用户端的github用户的code
@@ -49,14 +51,16 @@ public class AuthorizeController {
         //从github中跳转到社区
         accessTokenDTO.setRedirect_uri(redirectUri);
         accessTokenDTO.setState(state);
+
         //通过这个参数封装好的对象，获得access_token
         String accessToken = githubProvider.getAccessToken(accessTokenDTO);
         //通过access_token获得搜权用户
         GithubUser githubUser = githubProvider.getUser(accessToken);
         if(githubUser!=null&&githubUser.getId()!=null){
-            //登录成功。写cookie和session
+            //登录成功。写cookie（银行卡）和session（银行注册你的银行卡信息）
             User user = new User();
             user.setName(githubUser.getName());
+            //以token为主来绑定前端和服务端的依据
             String token = UUID.randomUUID().toString();
             user.setToken(token);
             user.setAccountId(String.valueOf(githubUser.getId()));
@@ -65,7 +69,9 @@ public class AuthorizeController {
 
             //插入数据库的过程就相当于写入了session
             userService.createOrUpdate(user);
+            //登录成功以后将token写入cookie中
             response.addCookie(new Cookie("token", token));
+            //redirect返回的是路径不能写index
             return "redirect:/";
         }else{
             log.error("callback get github error,{}",githubUser);

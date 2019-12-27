@@ -12,11 +12,13 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class GithubProvider {
+    //查看okHttp网站有获取方式
     public String getAccessToken(AccessTokenDTO accessTokenDTO) {
         MediaType mediaType = MediaType.get("application/json; charset=utf-8");
         OkHttpClient client = new OkHttpClient();
-        //将对象转化为json
+        //将对象转化为json---》引入jar包fastjson
         RequestBody body = RequestBody.create(mediaType, JSON.toJSONString(accessTokenDTO));
+        //调用github获取access_token，也可以通过在github上面直接生成个人access_token，进行测试，调用user api获取用户信息
         Request request = new Request.Builder()
                 .url("https://github.com/login/oauth/access_token")
                 .post(body)
@@ -46,7 +48,7 @@ public class GithubProvider {
             //json格式可以在github上Personal access tokens中生成access_token进行测试
             Response response = client.newCall(request).execute();
             String string = response.body().string();
-            //将json转化为对象
+            //将json转化为类对象
             GithubUser githubUser = JSON.parseObject(string, GithubUser.class);
             return githubUser;
         } catch (Exception e) {
