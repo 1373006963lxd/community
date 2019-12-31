@@ -4,7 +4,8 @@ import life.lxd.community.model.User;
 import lombok.Data;
 
 /**
- * Created by codedrinker on 2019/6/2.
+ * Created by codedrinker on 2019/12/2.
+ * 这是从服务端到客户端的数据类型
  */
 @Data
 public class CommentDTO {

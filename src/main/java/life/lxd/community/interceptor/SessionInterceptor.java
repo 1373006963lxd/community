@@ -22,6 +22,7 @@ import java.util.List;
 
 /**
  * Created by codedrinker on 2019/12/16.
+ *当重写方法不显示的时候可以按ctrl+insert添加
  */
 @Service
 public class SessionInterceptor implements HandlerInterceptor {
@@ -48,6 +49,7 @@ public class SessionInterceptor implements HandlerInterceptor {
 //       将token写入数据库后，通过前端的cookie去数据库中查询是否有这个用户数据，
 //        如果有则将user写入session中，前端就可以通过session展示用户名还是登录
         Cookie[] cookies = request.getCookies();
+//        如果浏览器没有cookie则不去执行，避免报空指针异常
         if(cookies!=null&&cookies.length!=0){
             for (Cookie cookie:cookies) {
                 if (cookie.getName().equals("token")) {

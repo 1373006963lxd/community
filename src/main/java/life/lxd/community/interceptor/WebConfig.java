@@ -18,6 +18,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+        /*可以在后面.excludePathPatterns("/xxxx/xxxx") 来排除那些路径不需要拦截*/
         registry.addInterceptor(sessionInterceptor).addPathPatterns("/**");
     }
 }

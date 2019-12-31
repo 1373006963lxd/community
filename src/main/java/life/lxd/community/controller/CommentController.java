@@ -33,6 +33,7 @@ public class CommentController {
         if(commentCreateDTO==null|| StringUtils.isBlank(commentCreateDTO.getCotent())){
             return ResultDTO.errorOf(CustomizeErrorCode.CONTENT_IS_EMPTY);
         }
+        /*创建评论插入到数据库中*/
         Comment comment = new Comment();
         comment.setParentId(commentCreateDTO.getParentId());
         //注意这里我内容打错英文用的是cotent

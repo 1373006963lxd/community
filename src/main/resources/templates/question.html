@@ -23,13 +23,13 @@
 <div th:insert="~{navigation :: nav}"></div>
 <div class="container-fluid main profile">
     <div class="row">
-        <!--            左边栏-->
+        <!--左边栏-->
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h4 class="question-title"><span th:text="${question.title}"></span></h4>
                 <span class="text-desc">
-                作者: <span th:text="${question.user.name}"></span>|
-                发布时间: <span th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd HH:mm')}"></span>|
+                作者: <span th:text="${question.user.name}"></span> |
+                发布时间: <span th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd HH:mm')}"></span> |
                 阅读数: <span th:text="${question.viewCount}"></span>
             </span>
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
@@ -83,7 +83,7 @@
                     </a>
                 </div>
             </div>
-
+            <!--评论显示的轮廓-->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 comment-edit">
                 <h4>
                     <span th:text="${question.commentCount}"></span> 个回复
@@ -92,6 +92,7 @@
 
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 comments" th:each="comment:${comments}">
                     <div class="media">
+                       <!--一级评论展示-->
                         <div class="media-left">
                             <a href="#">
                                 <img class="media-object img-circle"
@@ -105,16 +106,20 @@
                             </h5>
                             <div th:text="${comment.cotent}"></div>
                             <div class="menu">
+                                <!--点赞-->
                                 <span class="glyphicon glyphicon-thumbs-up icon"></span>
+                                <!--展示二级评论 th:data保存id 一种key，value的形式-->
                                 <span th:data-id="${comment.id}"
                                       onclick="collapseComments(this)" class="comment-icon">
-                                <span class="glyphicon glyphicon-comment"></span>
+                                <!--评论-->
+                                <span class="glyphicon glyphicon-comment icon"></span>
                                 <span th:text="${comment.commentCount}"></span>
                                 </span>
+                                <!--日期-->
                                 <span class="pull-right"
                                       th:text="${#dates.format(comment.gmtCreator,'yyyy-MM-dd')}"></span>
                             </div>
-                            <!--                            二级评论-->
+                            <!--二级评论-->
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 collapse sub-comments"
                                  th:id="${'comment-'+comment.id}">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -129,9 +134,11 @@
                     </div>
                 </div>
             </div>
+            <!--回复问题的textarea-->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 comment-bootom" id="comment_section">
+                    <!--头像信息-->
                     <div class="media">
                         <div class="media-left">
                             <a href="#">
@@ -146,13 +153,15 @@
                             </h5>
                         </div>
                     </div>
+                    <!--回复内容及其按钮  这里input就是回复问题的parentId 和发布问题时作用一样指定对其谁操作不同的是publish是提交form表单-->
                     <input type="hidden" id="question_id" th:value="${question.id}">
                     <textarea class="form-control comment" rows="6" id="comment_content"></textarea>
+                    <!--如何实现点击回复将parentId和content绑定-->
                     <button type="button" class="btn btn-success btn-comment" onclick="post()">回复</button>
                 </div>
             </div>
         </div>
-        <!--            右边栏-->
+        <!-- 右边栏-->
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h4>发起人</h4>

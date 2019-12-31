@@ -5,7 +5,7 @@
 JDK，Maven
 2. 克隆代码到本地  
 3. 运行命令创建数据库脚本
-```sh
+```sh执行sql语句的脚本命令
 mvn flyway:migrate
 ```
 4. 运行打包命令

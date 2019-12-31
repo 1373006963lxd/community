@@ -21,8 +21,10 @@ import java.io.PrintWriter;
 @ControllerAdvice
 @Slf4j
 public class CustomizeExceptionHandler {
+    /*所有的异常都需要处理*/
     @ExceptionHandler(Exception.class)
     ModelAndView handle(Throwable e, Model model, HttpServletRequest request, HttpServletResponse response) {
+        /*浏览器的请求类型和调用接口返回json的请求类型不一样--所以需要判断--json形式*/
         String contentType = request.getContentType();
         if ("application/json".equals(contentType)) {
             ResultDTO resultDTO;
@@ -44,10 +46,11 @@ public class CustomizeExceptionHandler {
             }
             return null;
         } else {
-            // 错误页面跳转
+            // 错误页面跳转--自定义异常 如果是上下文抛出来的自定义异常--text/html形式
             if (e instanceof CustomizeException) {
                 model.addAttribute("message", e.getMessage());
             } else {
+                /*不明异常处理*/
                 log.error("handle error", e);
                 model.addAttribute("message", CustomizeErrorCode.SYS_ERROR.getMessage());
             }

@@ -17,3 +17,18 @@ github授权登录：
       2.3.1 github返回access_Token到本地
       2.3.2 https://api.github.com/user?access_token= 获取到用户信息（github会检查token是否正确）
    2.4  进行用户信息的存储操作
+3.回复问题采用ajax异步加载，局部刷新。将请求发送到服务器端，得到相应，直接处理
+4.分页功能，主要根据搜索条件进行搜索（search，tag，currentPage，size）
+首先根据搜索条件查询出所有符合search，tag数据totalCount，然后计算出totalPage及offset，然后根据
+offset和size通过limit计算出当前页显示的数据。
+（其中search是通过数组保存，空格分隔开的，然后定义一个简单的或运算构成一个正则表达式）
+5.评论id，父类id，类型（一级回复或者是二级回复），评论人id，回复内容，创建时间，更新时间，点赞数
+通过前后端分离的形式进行开发定义一个json字符串
+{
+"parentId:16",
+"content":"这是一个回复内容",
+"type":1,
+}
+在浏览器端构造成这个样子传到服务器端，服务器端在进行保存评论
+评论这里又分为是评论内容还是评论的的评论
+回复内容利用jquery

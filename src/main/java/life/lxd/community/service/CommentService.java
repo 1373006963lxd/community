@@ -55,16 +55,20 @@ public class CommentService {
         }
         if (comment.getType() == CommentTypeEnum.COMMENT.getType()) {
             // 回复评论
+            /*查询出要评论的评论*/
             Comment dbComment = commentMapper.selectByPrimaryKey(comment.getParentId());
             if (dbComment == null) {
                 throw new CustomizeException(CustomizeErrorCode.COMMENT_NOT_FOUND);
             }
+            /*查询出评论的是哪一个问题*/
             Question question = questionMapper.selectByPrimaryKey(dbComment.getParentId());
             if (question == null) {
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
+            /*插入评论*/
             commentMapper.insert(comment);
 
+            /*对其评论的评论数+1*/
             Comment parentComment = new Comment();
             parentComment.setId(comment.getParentId());
             parentComment.setCommentCount(1);
@@ -74,12 +78,15 @@ public class CommentService {
         }
         else{
             // 回复问题
+            /*查询出评论的是哪一个问题*/
             Question question = questionMapper.selectByPrimaryKey(comment.getParentId());
             if (question == null) {
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
+            /*对其评论本身设置为0*/
             comment.setCommentCount(0);
             commentMapper.insert(comment);
+            /*对其评论的问题的评论数+1*/
             question.setCommentCount(1);
             questionExtMapper.incCommentCount(question);
            createNotify(comment, question.getCreator(),commentator.getName(),question.getTitle(),question.getId(), NotificationTypeEnum.REPLY_QUESTION);
@@ -115,7 +122,7 @@ public class CommentService {
         if (comments.size() == 0) {
             return new ArrayList<>();
         }
-        // 获取去重的评论人
+        // 获取去重的评论人。map就是遍历每一个评论，获取到该评论的评论者并用set集合装载去重
         Set<Integer> commentators = comments.stream().map(comment -> comment.getCommentator()).collect(Collectors.toSet());
         List<Integer> userIds = new ArrayList();
         userIds.addAll(commentators);
@@ -126,6 +133,7 @@ public class CommentService {
         userExample.createCriteria()
                 .andIdIn(userIds);
         List<User> users = userMapper.selectByExample(userExample);
+        /*查询出所有的评论该问题的评论者并用map集合，这样方便获取user*/
         Map<Integer, User> userMap = users.stream().collect(Collectors.toMap(user -> user.getId(), user -> user));
 
 
@@ -133,6 +141,7 @@ public class CommentService {
         List<CommentDTO> commentDTOS = comments.stream().map(comment -> {
             CommentDTO commentDTO = new CommentDTO();
             BeanUtils.copyProperties(comment, commentDTO);
+            /*针对某一个评论获取该评论的评论者*/
             commentDTO.setUser(userMap.get(comment.getCommentator()));
             return commentDTO;
         }).collect(Collectors.toList());

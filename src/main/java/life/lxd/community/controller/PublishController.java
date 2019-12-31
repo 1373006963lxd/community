@@ -30,6 +30,7 @@ public class PublishController {
         model.addAttribute("title", question.getTitle());
         model.addAttribute("description", question.getDescription());
         model.addAttribute("tag", question.getTag());
+        /*当访问存在问题时，回显这个问题的id当在次发布修改该问题时还是再原来（跳转到"/publish"）问题的基础上更改*/
         model.addAttribute("id", question.getId());
         model.addAttribute("tags", TagCache.get());
 
@@ -85,7 +86,9 @@ public class PublishController {
         question.setDescription(description);
         question.setTag(tag);
         question.setCreator(user.getId());
+        /*这里的id可以为空的*/
         question.setId(id);
+        /*创建或者更新问题*/
         questionService.createOrUpdate(question);
         return "redirect:/";
     }

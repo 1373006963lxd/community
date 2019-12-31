@@ -46,6 +46,7 @@
             <version>2.1.1</version>
         </dependency>
 
+        <!--引入StringUtils-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -127,6 +128,7 @@
                     <addResources>true</addResources>
                 </configuration>
             </plugin>
+            <!-- generator 工具配置文件的位置 -->
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>

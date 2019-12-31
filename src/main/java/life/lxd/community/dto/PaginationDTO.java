@@ -45,10 +45,12 @@ public class PaginationDTO<T> {
         //保证左边和右边都显示3页
         for (int i = 1; i <= 3; i++) {
             if (page - i > 0) {
+                /*往前插入元素*/
                 pages.add(0, page - i);
             }
 
             if (page + i <= totalPage) {
+                /*往后插图元素*/
                 pages.add(page + i);
             }
         }

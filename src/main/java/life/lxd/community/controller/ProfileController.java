@@ -27,6 +27,7 @@ public class ProfileController {
                           @RequestParam(name="page",defaultValue = "1") Integer page,
                           @RequestParam(name="size",defaultValue = "5") Integer size){
 
+        /*从session中获取user*/
         User user = (User) request.getSession().getAttribute("user");
         if(user==null){
             return "redirect:/";

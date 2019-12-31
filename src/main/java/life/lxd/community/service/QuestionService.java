@@ -30,11 +30,17 @@ public class QuestionService {
     private QuestionExtMapper questionExtMapper;
     @Autowired
     private UserMapper userMapper;
+    /*首页显示所有问题*/
     public PaginationDTO list(String search,String tag,Integer page, Integer size) {
 
         if (StringUtils.isNotBlank(search)){
             String[] tags = StringUtils.split(search, " ");
-            search = Arrays.stream(tags).collect(Collectors.joining("|"));
+            search = Arrays
+                    .stream(tags)
+                    .filter(StringUtils::isNotBlank)
+                    .map(t -> t.replace("+", "").replace("*", "").replace("?", ""))
+                    .filter(StringUtils::isNotBlank)
+                    .collect(Collectors.joining("|"));
         }
 
 
@@ -65,7 +71,7 @@ public class QuestionService {
         //进行paginationDTO的封装操作（页面需要显示的页码及上一页下一页第一页最后一页是否显示设置）
         paginationDTO.setPagination(totalPage, page);
         //size*(page-1)
-        Integer offset = size*(page-1);
+        Integer offset = page < 1 ? 0 : size * (page - 1);
         //分页操作-当前页展示的问题数据
         QuestionExample questionExample = new QuestionExample();
         questionExample.setOrderByClause("gmt_create desc");
@@ -89,6 +95,7 @@ public class QuestionService {
         return paginationDTO;
     }
 
+    /*查询当前用户提问的问题*/
     public PaginationDTO list(Integer userId, Integer page, Integer size) {
 
         PaginationDTO paginationDTO = new PaginationDTO();
@@ -150,6 +157,7 @@ public class QuestionService {
     }
 
     public void createOrUpdate(Question question) {
+        /*当没有这个id的时候就是发布新的问题*/
         if(question.getId()==null){
             //创建
 
@@ -159,6 +167,7 @@ public class QuestionService {
             question.setLikeCount(0);
             question.setCommentCount(0);
             questionMapper.insertSelective(question);
+            /*否则就是在原来的问题上进行修改更新该问题*/
         }else {
             //更新
             Question updateQuestion = new Question();
@@ -169,6 +178,7 @@ public class QuestionService {
             QuestionExample questionExample = new QuestionExample();
             questionExample.createCriteria().andIdEqualTo(question.getId());
             int updated = questionMapper.updateByExampleSelective(updateQuestion, questionExample);
+            /*如果更新失败*/
             if(updated!=1){
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
@@ -178,6 +188,7 @@ public class QuestionService {
     public void incView(Integer id) {
         Question question= new Question();
         question.setId(id);
+        /*这里不要用查询问题后再＋1的形式，不然并发情况会导致数据错误，使用直接在数据库中的数据+1的形式*/
         question.setViewCount(1);
         questionExtMapper.incView(question);
     }

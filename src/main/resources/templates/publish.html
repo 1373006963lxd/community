@@ -29,10 +29,11 @@
             <hr>
         <!--当你填写完表单submit的时候提交的地址-->
             <form action="/publish" method="post">
+                <!--这里设置id就是为了当编辑一个存在的问题时是在该问题的基础上更改，而不是重新发布一个新的id-->
                 <input type="hidden" name="id" th:value="${id}">
                 <div class="form-group">
                     <label for="title">问题标题(简单扼要)</label>
-                    <!-- thymeleaf通过th:value设置input的值-->
+                    <!-- thymeleaf通过th:value设置input的值  name是这里面的内容供服务端获取 @RequestParam-->
                     <input type="text" class="form-control" id="title" autocomplete="off" th:value="${title}"
                            name="title" placeholder="问题标题......">
                 </div>
@@ -90,10 +91,11 @@
                 <div class="container-fluid main">
                     <div class="row">
                         <!--  这里的目的就是当没有错误信息的时候左边还是占9份 避免button的位置在右边                     -->
-                        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12"></div>
-                        <div class="alert alert-danger col-lg-9 col-md-12 col-sm-12 col-xs-12"
+                        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                        <div class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xs-12"
                              th:text="${error}" th:if="${error!=null}"
                         >
+                        </div>
                         </div>
                         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                             <button type="submit" class="btn btn-success btn-publish ">发布</button>
