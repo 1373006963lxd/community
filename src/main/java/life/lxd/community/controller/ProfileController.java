@@ -1,7 +1,6 @@
 package life.lxd.community.controller;
 
 import life.lxd.community.dto.PaginationDTO;
-import life.lxd.community.mapper.NotificationMapper;
 import life.lxd.community.model.User;
 import life.lxd.community.service.NotificationService;
 import life.lxd.community.service.QuestionService;

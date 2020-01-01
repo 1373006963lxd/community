@@ -3,6 +3,7 @@ package life.lxd.community.service;
 import life.lxd.community.dto.PaginationDTO;
 import life.lxd.community.dto.QuestionDTO;
 import life.lxd.community.dto.QuestionQueryDTO;
+import life.lxd.community.enums.SortEnum;
 import life.lxd.community.exception.CustomizeErrorCode;
 import life.lxd.community.exception.CustomizeException;
 import life.lxd.community.mapper.QuestionExtMapper;
@@ -31,7 +32,7 @@ public class QuestionService {
     @Autowired
     private UserMapper userMapper;
     /*首页显示所有问题*/
-    public PaginationDTO list(String search,String tag,Integer page, Integer size) {
+    public PaginationDTO list(String sort,String search,String tag,Integer page, Integer size) {
 
         if (StringUtils.isNotBlank(search)){
             String[] tags = StringUtils.split(search, " ");
@@ -51,7 +52,25 @@ public class QuestionService {
 
         QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
         questionQueryDTO.setSearch(search);
-        questionQueryDTO.setTag(tag);
+        if (StringUtils.isNotBlank(tag)) {
+            tag = tag.replace("+", "").replace("*", "").replace("?", "");
+            questionQueryDTO.setTag(tag);
+        }
+
+        for (SortEnum sortEnum : SortEnum.values()) {
+            if (sortEnum.name().toLowerCase().equals(sort)) {
+                questionQueryDTO.setSort(sort);
+
+                if (sortEnum == SortEnum.HOT7) {
+                    questionQueryDTO.setTime(System.currentTimeMillis() - 1000L * 60 * 60 * 24 * 7);
+                }
+                if (sortEnum == SortEnum.HOT30) {
+                    questionQueryDTO.setTime(System.currentTimeMillis() - 1000L * 60 * 60 * 24 * 30);
+                }
+                break;
+            }
+        }
+//        questionQueryDTO.setTime(System.currentTimeMillis());
         //1.查询总数据个数
         Integer totalCount = questionExtMapper.countBySearch(questionQueryDTO);
         //2.计算总页数
@@ -73,8 +92,8 @@ public class QuestionService {
         //size*(page-1)
         Integer offset = page < 1 ? 0 : size * (page - 1);
         //分页操作-当前页展示的问题数据
-        QuestionExample questionExample = new QuestionExample();
-        questionExample.setOrderByClause("gmt_create desc");
+       /* QuestionExample questionExample = new QuestionExample();
+        questionExample.setOrderByClause("gmt_create desc");*/
         questionQueryDTO.setSize(size);
         questionQueryDTO.setPage(offset);
         //根据当前页展示的数据数，及第几条数据开始----查询出当前页所要显示的问题数据

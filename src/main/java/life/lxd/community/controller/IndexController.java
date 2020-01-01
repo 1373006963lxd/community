@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -29,6 +30,7 @@ public class IndexController {
     * 如果存在直接显示我，如果没有在授权登录*/
     @GetMapping("/")
     public String index(Model model,
+                        @RequestParam(name="sort",required = false) String sort,
                         @RequestParam(name="page",defaultValue = "1") Integer page,
                         @RequestParam(name="size",defaultValue = "10") Integer size,
                         @RequestParam(name="search",required = false) String search,
@@ -38,13 +40,14 @@ public class IndexController {
         //实现首页展示发表问题列表，主要问题出现头像，需要和question关联，
         //因为question里面没有头像，需要与用户表关联，但是数据库中都是字段，没有引入对象
         //所以引入了DTO,又因为之前用questionMapper返回的是question对象，所以引入了service层来做
-        PaginationDTO pagination = questionService.list(search,tag,page,size);
-        List<String> tags = hotTagCache.getHots();
+            PaginationDTO pagination = questionService.list(sort,search, tag, page, size);
+            List<String> tags = hotTagCache.getHots();
 
-        model.addAttribute("pagination", pagination);
-        model.addAttribute("search", search);
-        model.addAttribute("tag", tag);
-        model.addAttribute("tags", tags);
+            model.addAttribute("pagination", pagination);
+            model.addAttribute("search", search);
+            model.addAttribute("tag", tag);
+            model.addAttribute("tags", tags);
+            model.addAttribute("sort", sort);
         return "index";
     }
 }
